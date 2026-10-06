@@ -14,10 +14,10 @@
 [INFO] 
 [INFO] --- compiler:3.15.0:compile (default-compile) @ Capstone_project ---
 [INFO] Recompiling the module because of changed source code.
-[INFO] Compiling 50 source files with javac [debug parameters release 17] to target\classes
+[INFO] Compiling 56 source files with javac [debug parameters release 17] to target\classes
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  4.048 s
-[INFO] Finished at: 2026-10-06T11:31:19-04:00
+[INFO] Total time:  5.851 s
+[INFO] Finished at: 2026-10-06T13:31:13-04:00
 [INFO] ------------------------------------------------------------------------
