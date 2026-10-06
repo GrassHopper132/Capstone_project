@@ -1,0 +1,33 @@
+meta {
+  name: 14 Validation error is 400
+  type: http
+  seq: 14
+}
+
+post {
+  url: {{baseUrl}}/api/v1/artifacts
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "accessionNumber": "",
+    "title": "",
+    "status": "STORED",
+    "collectionId": 1,
+    "locationId": 1
+  }
+}
+
+assert {
+  res.status: eq 400
+}

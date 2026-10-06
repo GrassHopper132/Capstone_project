@@ -1,0 +1,13 @@
+Summary,Description,Issue Type,Priority
+Admin creates and deactivates staff accounts,Deactivated user cannot obtain a JWT,Story,High
+Admin assigns a role to a user,Role change takes effect on next login,Story,Medium
+Admin sees every artifact across all collections,List returns artifacts regardless of curator,Story,Medium
+Admin reviews an artifact's change history,History shows who changed what and when,Story,Low
+Curator accessions a new artifact with a unique number,Duplicate accession number is rejected with 409,Story,High
+Curator assigns an artifact to a collection and storage location,Artifact detail shows both and location is required,Story,High
+Curator builds an exhibition from artifacts across collections,An artifact can belong to several exhibitions,Story,Medium
+Curator filters artifacts by status material and date range,Filtered list is paginated 20 per page,Story,High
+Restorer sees a queue of artifacts flagged for restoration,Queue shows only OPEN and IN_PROGRESS jobs,Story,Medium
+Restorer logs a condition report with a grade and notes,Report is timestamped and attributed to the inspector,Story,Medium
+Restorer opens updates and closes a restoration job,Closing a job sets artifact status back to STORED,Story,Medium
+Any user logs in and sees only what their role permits,Restorer gets 403 on artifact delete,Story,High

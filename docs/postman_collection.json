@@ -1,0 +1,721 @@
+{
+  "info": {
+    "name": "Museum Artifact Manager API",
+    "description": "UCI 2123 capstone. Run Login first - it stores the bearer token in the collection variable used by every other request.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/api/v1"
+    },
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "artifactId",
+      "value": "1"
+    }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register (ADMIN)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            },
+            "description": "Creates an account. Returns 409 if the email already exists.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@test.org\",\n  \"password\": \"Password123!\",\n  \"fullName\": \"Carlos Rhymer\",\n  \"role\": \"ADMIN\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('201 Created', () => pm.response.to.have.status(201));",
+                  "const b = pm.response.json();",
+                  "pm.collectionVariables.set('token', b.token);",
+                  "pm.test('returns a token', () => pm.expect(b.token).to.be.a('string'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Register (RESTORER)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            },
+            "description": "Second account, used to demonstrate role-based access control.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"restorer@test.org\",\n  \"password\": \"Password123!\",\n  \"fullName\": \"Tomas Lindqvist\",\n  \"role\": \"RESTORER\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            },
+            "description": "Stores the token for the rest of the collection.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@test.org\",\n  \"password\": \"Password123!\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200 OK', () => pm.response.to.have.status(200));",
+                  "const b = pm.response.json();",
+                  "pm.collectionVariables.set('token', b.token);",
+                  "pm.test('role is present', () => pm.expect(b.role).to.be.oneOf(['ADMIN','CURATOR','RESTORER']));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Login with a wrong password (401)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            },
+            "description": "The message is deliberately vague so it does not confirm which emails exist.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@test.org\",\n  \"password\": \"not-the-password\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('401 Unauthorized', () => pm.response.to.have.status(401));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Artifacts",
+      "item": [
+        {
+          "name": "List artifacts",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/artifacts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "artifacts"
+              ]
+            },
+            "description": "Paginated. Default page size is 20, capped at 100."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200 OK', () => pm.response.to.have.status(200));",
+                  "const b = pm.response.json();",
+                  "pm.test('returns a page', () => pm.expect(b).to.have.property('content'));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "List artifacts without a token (401)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/artifacts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "artifacts"
+              ]
+            },
+            "description": "Every endpoint except /auth is protected."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('401 Unauthorized', () => pm.response.to.have.status(401));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Filter by status",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/artifacts?status=ON_DISPLAY",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "artifacts"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "ON_DISPLAY"
+                }
+              ]
+            },
+            "description": "Filters are composed as JPA Criteria specifications; omitted filters add no predicate."
+          }
+        },
+        {
+          "name": "Search by title or accession number",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/artifacts?search=amphora&page=0&size=20",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "artifacts"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "amphora"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Get one artifact",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/artifacts/{{artifactId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "artifacts",
+                "{{artifactId}}"
+              ]
+            },
+            "description": "Loads collection and location in the same query."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200 OK', () => pm.response.to.have.status(200));",
+                  "const b = pm.response.json();",
+                  "pm.test('relationships resolved', () => {",
+                  "  pm.expect(b.collectionName).to.be.a('string');",
+                  "  pm.expect(b.locationLabel).to.be.a('string');",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get a missing artifact (404)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/artifacts/999999",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "artifacts",
+                "999999"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('404 Not Found', () => pm.response.to.have.status(404));",
+                  "pm.test('uses the documented error shape', () => {",
+                  "  const b = pm.response.json();",
+                  "  pm.expect(b).to.have.all.keys('timestamp','status','error','message','path','validationErrors');",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create artifact",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/artifacts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "artifacts"
+              ]
+            },
+            "description": "ADMIN or CURATOR only.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"accessionNumber\": \"2026.1.1\",\n  \"title\": \"Test amphora\",\n  \"originCulture\": \"Attic Greek\",\n  \"datePeriod\": \"c. 480 BCE\",\n  \"material\": \"Terracotta\",\n  \"description\": \"Created from Postman.\",\n  \"collectionId\": 1,\n  \"locationId\": 1,\n  \"acquiredOn\": \"2026-01-15\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('201 Created', () => pm.response.to.have.status(201));",
+                  "const b = pm.response.json();",
+                  "pm.collectionVariables.set('artifactId', b.id);"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create with a duplicate accession number (409)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/artifacts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "artifacts"
+              ]
+            },
+            "description": "FR-5: accession numbers are unique.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"accessionNumber\": \"2026.1.1\",\n  \"title\": \"Duplicate\",\n  \"collectionId\": 1,\n  \"locationId\": 1\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('409 Conflict', () => pm.response.to.have.status(409));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create with missing required fields (400)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/artifacts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "artifacts"
+              ]
+            },
+            "description": "Bean validation failures come back per field.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"accessionNumber\": \"\",\n  \"title\": \"\",\n  \"collectionId\": null,\n  \"locationId\": null\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('400 Bad Request', () => pm.response.to.have.status(400));",
+                  "pm.test('names the invalid fields', () => {",
+                  "  pm.expect(pm.response.json().validationErrors).to.be.an('object');",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Update artifact",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/artifacts/{{artifactId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "artifacts",
+                "{{artifactId}}"
+              ]
+            },
+            "description": "The accession number in the body is ignored: it is immutable after creation.",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"accessionNumber\": \"ignored\",\n  \"title\": \"Test amphora (updated)\",\n  \"originCulture\": \"Attic Greek\",\n  \"material\": \"Terracotta\",\n  \"collectionId\": 1,\n  \"locationId\": 2\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200 OK', () => pm.response.to.have.status(200));",
+                  "pm.test('accession number unchanged', () => {",
+                  "  pm.expect(pm.response.json().accessionNumber).to.eql('2026.1.1');",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Change status",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/artifacts/{{artifactId}}/status?status=ON_DISPLAY",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "artifacts",
+                "{{artifactId}}",
+                "status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "ON_DISPLAY"
+                }
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Delete artifact",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/artifacts/{{artifactId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "artifacts",
+                "{{artifactId}}"
+              ]
+            },
+            "description": "ADMIN only. Returns 409 if the artifact is on an active exhibition (FR-11)."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('204 No Content', () => pm.response.to.have.status(204));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reference data",
+      "item": [
+        {
+          "name": "List collections",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/collections",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "collections"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200 OK', () => pm.response.to.have.status(200));",
+                  "pm.test('includes artifact counts', () => {",
+                  "  pm.expect(pm.response.json()[0]).to.have.property('artifactCount');",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get one collection",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/collections/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "collections",
+                "1"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "List locations",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/locations",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "locations"
+              ]
+            },
+            "description": ""
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('200 OK', () => pm.response.to.have.status(200));",
+                  "pm.test('includes a readable label', () => {",
+                  "  pm.expect(pm.response.json()[0].label).to.be.a('string');",
+                  "});"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

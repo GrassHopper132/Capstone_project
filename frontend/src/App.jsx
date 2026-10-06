@@ -1,0 +1,32 @@
+import { Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import ArtifactList from "./pages/ArtifactList";
+import ArtifactDetail from "./pages/ArtifactDetail";
+import ArtifactNew from "./pages/ArtifactNew";
+import NotFound from "./pages/NotFound";
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/login" element={<Login />} />
+
+      <Route element={<ProtectedRoute><Layout /></ProtectedRoute>}>
+        <Route index element={<Dashboard />} />
+        <Route path="artifacts" element={<ArtifactList />} />
+        <Route
+          path="artifacts/new"
+          element={
+            <ProtectedRoute roles={["ADMIN", "CURATOR"]}>
+              <ArtifactNew />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="artifacts/:id" element={<ArtifactDetail />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    </Routes>
+  );
+}

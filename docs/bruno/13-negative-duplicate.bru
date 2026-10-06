@@ -1,0 +1,36 @@
+meta {
+  name: 13 Duplicate accession is 409
+  type: http
+  seq: 13
+}
+
+post {
+  url: {{baseUrl}}/api/v1/artifacts
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "accessionNumber": "1994.22.7",
+    "title": "Duplicate accession probe",
+    "description": "Should be rejected by FR-5.",
+    "origin": "Unknown",
+    "status": "STORED",
+    "conditionGrade": "GOOD",
+    "collectionId": 1,
+    "locationId": 1
+  }
+}
+
+assert {
+  res.status: eq 409
+}

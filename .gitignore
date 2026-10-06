@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+_replaced/
+all-java.txt
+setup-backend.ps1
+target/
