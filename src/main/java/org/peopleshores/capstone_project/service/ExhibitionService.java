@@ -177,4 +177,17 @@ public class ExhibitionService {
             throw new BusinessRuleException("endDate must fall after startDate");
         }
     }
+
+    /**
+     * Detail for the public pages. Only a show that is open today is visible, so
+     * an anonymous caller cannot browse next season's programme before it is
+     * announced, or dig through shows that have already closed.
+     */
+    public Exhibition getPublicDetail(Long id) {
+        Exhibition exhibition = getDetail(id);
+        if (!exhibition.isActiveOn(LocalDate.now())) {
+            throw ResourceNotFoundException.of("Exhibition", id);
+        }
+        return exhibition;
+    }
 }

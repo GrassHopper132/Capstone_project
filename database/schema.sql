@@ -20,7 +20,7 @@ CREATE TABLE roles (
                        updated_at  TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
                        CONSTRAINT pk_roles           PRIMARY KEY (id),
                        CONSTRAINT uq_roles_name      UNIQUE (name),
-                       CONSTRAINT ck_roles_name      CHECK (name IN ('ADMIN', 'CURATOR', 'RESTORER'))
+                       CONSTRAINT ck_roles_name      CHECK (name IN ('ADMIN', 'CURATOR', 'RESTORER', 'VISITOR'))
 ) ENGINE = InnoDB;
 
 -- ---------------------------------------------------------------------

@@ -14,39 +14,10 @@
 [INFO] 
 [INFO] --- compiler:3.15.0:compile (default-compile) @ Capstone_project ---
 [INFO] Recompiling the module because of changed source code.
-[INFO] Compiling 56 source files with javac [debug parameters release 17] to target\classes
-[INFO] 
-[INFO] --- resources:3.5.0:testResources (default-testResources) @ Capstone_project ---
-[INFO] Copying 1 resource from src\test\resources to target\test-classes
-[INFO] 
-[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ Capstone_project ---
-[INFO] Recompiling the module because of changed dependency.
-[INFO] Compiling 2 source files with javac [debug parameters release 17] to target\test-classes
-[INFO] -------------------------------------------------------------
-[ERROR] COMPILATION ERROR : 
-[INFO] -------------------------------------------------------------
-[ERROR] /C:/dev/Capstone_project/src/test/java/org/peopleshores/capstone_project/service/ArtifactServiceTest.java:[56,19] constructor ArtifactRequest in record org.peopleshores.capstone_project.dto.ArtifactRequest cannot be applied to given types;
-  required: java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Long,java.lang.Long,java.time.LocalDate,java.lang.String
-  found:    java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,long,long,java.time.LocalDate
-  reason: actual and formal argument lists differ in length
-[INFO] 1 error
-[INFO] -------------------------------------------------------------
+[INFO] Compiling 58 source files with javac [debug parameters release 17] to target\classes
 [INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
+[INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  7.788 s
-[INFO] Finished at: 2026-10-06T14:09:47-04:00
+[INFO] Total time:  5.328 s
+[INFO] Finished at: 2026-10-06T14:44:29-04:00
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.15.0:testCompile (default-testCompile) on project Capstone_project: Compilation failure
-[ERROR] /C:/dev/Capstone_project/src/test/java/org/peopleshores/capstone_project/service/ArtifactServiceTest.java:[56,19] constructor ArtifactRequest in record org.peopleshores.capstone_project.dto.ArtifactRequest cannot be applied to given types;
-[ERROR]   required: java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Long,java.lang.Long,java.time.LocalDate,java.lang.String
-[ERROR]   found:    java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,long,long,java.time.LocalDate
-[ERROR]   reason: actual and formal argument lists differ in length
-[ERROR] 
-[ERROR] -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

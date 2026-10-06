@@ -115,3 +115,5 @@ INSERT INTO exhibition_artifacts (exhibition_id, artifact_id, display_order) VAL
                                                                                  (3, 11, 2),
                                                                                  (3, 12, 3),
                                                                                  (3, 14, 4);
+-- Public visitors. Self-registration creates this role.
+INSERT IGNORE INTO roles (name) VALUES ('VISITOR');

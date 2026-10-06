@@ -23,7 +23,7 @@ public class AuthService {
      * Public self-registration always creates this role. A caller cannot choose
      * their own privilege level; promotion is an administrative action.
      */
-    private static final String DEFAULT_ROLE = "CURATOR";
+    private static final String DEFAULT_ROLE = "VISITOR";
 
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;

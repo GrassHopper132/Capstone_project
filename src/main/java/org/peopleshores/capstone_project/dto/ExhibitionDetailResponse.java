@@ -26,7 +26,8 @@ public record ExhibitionDetailResponse(
             String accessionNumber,
             String title,
             String status,
-            Integer displayOrder
+            Integer displayOrder,
+            String imageUrl
     ) {
         public static Entry from(ExhibitionArtifact ea) {
             return new Entry(
@@ -34,7 +35,8 @@ public record ExhibitionDetailResponse(
                     ea.getArtifact().getAccessionNumber(),
                     ea.getArtifact().getTitle(),
                     ea.getArtifact().getStatus() == null ? null : ea.getArtifact().getStatus().name(),
-                    ea.getDisplayOrder()
+                    ea.getDisplayOrder(),
+                    ea.getArtifact().getImageUrl()
             );
         }
     }
