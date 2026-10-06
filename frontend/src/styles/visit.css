@@ -1,0 +1,179 @@
+/* Visitor-facing pages. Everything is scoped to .visit so it cannot collide
+   with the staff application's styles. */
+
+.visit {
+  --wall: #ededea;
+  --paper: #f7f6f4;
+  --ink: #17171a;
+  --rule: #d2d0ca;
+  --label: #6b6762;
+  --accent: #2b5f75;
+
+  background: var(--wall);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+}
+
+.visit a { color: var(--accent); }
+
+.visit-bar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.visit-wordmark {
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+}
+
+.visit-bar nav { display: flex; gap: 20px; font-size: 15px; }
+
+.visit-main { max-width: 1120px; margin: 0 auto; padding: 0 24px 96px; }
+
+.visit-intro { padding: 56px 0 40px; max-width: 46ch; }
+
+.visit-intro h1 {
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  margin: 0 0 16px;
+  font-weight: 400;
+}
+
+.visit-intro p { margin: 0; font-size: 1.0625rem; line-height: 1.6; color: var(--label); }
+
+/* --- one exhibition ----------------------------------------------------- */
+
+.visit-show { border-top: 1px solid var(--rule); padding-top: 40px; margin-top: 56px; }
+
+.visit-show-head { max-width: 58ch; margin-bottom: 40px; }
+
+.visit-show-head h2 {
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-size: clamp(1.6rem, 3.6vw, 2.4rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  margin: 0 0 10px;
+}
+
+.visit-show-meta { margin: 0; font-size: 0.9375rem; line-height: 1.7; color: var(--label); }
+
+/* --- the hero object ---------------------------------------------------- */
+
+.visit-hero { margin-bottom: 64px; }
+
+.visit-hero img {
+  display: block;
+  width: 100%;
+  height: clamp(260px, 46vh, 520px);
+  object-fit: cover;
+  background: var(--paper);
+}
+
+.visit-hero figcaption {
+  margin-top: 12px;
+  font-size: 0.875rem;
+  color: var(--label);
+}
+
+/* --- object list: label beside object ----------------------------------- */
+
+.visit-object {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 32px;
+  align-items: center;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.visit-object:nth-child(even) .visit-object-image { order: 2; }
+
+.visit-object-image img {
+  display: block;
+  width: 100%;
+  height: clamp(200px, 30vh, 340px);
+  object-fit: cover;
+  background: var(--paper);
+}
+
+.visit-object-image .visit-noimage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: clamp(200px, 30vh, 340px);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  color: var(--label);
+  font-size: 0.875rem;
+}
+
+.visit-object h3 {
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-size: 1.375rem;
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 0 0 10px;
+}
+
+.visit-object dl { margin: 0; font-size: 0.9375rem; line-height: 1.75; color: var(--label); }
+.visit-object dt { display: inline; }
+.visit-object dd { display: inline; margin: 0 0 0 6px; color: var(--ink); }
+.visit-object dd::after { content: ""; display: block; }
+
+/* --- empty + error ------------------------------------------------------ */
+
+.visit-quiet {
+  padding: 56px 0;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--label);
+  max-width: 50ch;
+}
+
+/* --- plan your visit ---------------------------------------------------- */
+
+.visit-foot {
+  border-top: 1px solid var(--rule);
+  margin-top: 72px;
+  padding-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+}
+
+.visit-foot h2 {
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 0 0 12px;
+}
+
+.visit-foot p { margin: 0 0 8px; font-size: 0.9375rem; line-height: 1.7; color: var(--label); }
+
+.visit-directions {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9375rem;
+}
+
+.visit-directions:hover { background: #1f4759; color: #fff; }
+
+@media (max-width: 720px) {
+  .visit-object { grid-template-columns: 1fr; gap: 20px; }
+  .visit-object:nth-child(even) .visit-object-image { order: 0; }
+}
