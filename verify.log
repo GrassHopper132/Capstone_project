@@ -1,0 +1,1393 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< org.peopleshores:Capstone_project >------------------
+[INFO] Building Museum Artifact Manager 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ Capstone_project ---
+[INFO] Deleting C:\dev\Capstone_project\target
+[INFO] 
+[INFO] --- jacoco:0.8.15:prepare-agent (prepare-agent) @ Capstone_project ---
+[INFO] argLine set to -javaagent:C:\\Users\\carlos.rhymer\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.15\\org.jacoco.agent-0.8.15-runtime.jar=destfile=C:\\dev\\Capstone_project\\target\\jacoco.exec
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ Capstone_project ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ Capstone_project ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 58 source files with javac [debug parameters release 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ Capstone_project ---
+[INFO] Copying 1 resource from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ Capstone_project ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 14 source files with javac [debug parameters release 17] to target\test-classes
+[INFO] /C:/dev/Capstone_project/src/test/java/org/peopleshores/capstone_project/service/ArtifactServiceSearchTest.java: C:\dev\Capstone_project\src\test\java\org\peopleshores\capstone_project\service\ArtifactServiceSearchTest.java uses unchecked or unsafe operations.
+[INFO] /C:/dev/Capstone_project/src/test/java/org/peopleshores/capstone_project/service/ArtifactServiceSearchTest.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ Capstone_project ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.peopleshores.capstone_project.CapstoneProjectApplicationTests
+15:53:31.786 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [org.peopleshores.capstone_project.CapstoneProjectApplicationTests]: CapstoneProjectApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:53:31.949 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration org.peopleshores.capstone_project.CapstoneProjectApplication for test class org.peopleshores.capstone_project.CapstoneProjectApplicationTests
+15:53:32.105 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [org.peopleshores.capstone_project.CapstoneProjectApplicationTests]: CapstoneProjectApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:53:32.107 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration org.peopleshores.capstone_project.CapstoneProjectApplication for test class org.peopleshores.capstone_project.CapstoneProjectApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-10-06T15:53:32.579-04:00  INFO 8052 --- [           main] o.p.c.CapstoneProjectApplicationTests    : Starting CapstoneProjectApplicationTests using Java 26.0.2 with PID 8052 (started by carlos.rhymer in C:\dev\Capstone_project)
+2026-10-06T15:53:32.581-04:00  INFO 8052 --- [           main] o.p.c.CapstoneProjectApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2026-10-06T15:53:33.899-04:00  INFO 8052 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-06T15:53:34.044-04:00  INFO 8052 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 131 ms. Found 9 JPA repository interfaces.
+2026-10-06T15:53:34.797-04:00  INFO 8052 --- [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-06T15:53:34.890-04:00  INFO 8052 --- [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-06T15:53:35.649-04:00  INFO 8052 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-06T15:53:35.715-04:00  INFO 8052 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-06T15:53:36.105-04:00  INFO 8052 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-10-06T15:53:36.109-04:00  INFO 8052 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-06T15:53:36.155-04:00  WARN 8052 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-06T15:53:36.198-04:00  INFO 8052 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:testdb]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: TESTDB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-06T15:53:38.759-04:00  INFO 8052 --- [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-06T15:53:38.876-04:00  INFO 8052 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-06T15:53:38.985-04:00  INFO 8052 --- [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-06T15:53:40.663-04:00  INFO 8052 --- [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name appUserDetailsService
+2026-10-06T15:53:41.603-04:00  INFO 8052 --- [           main] o.p.c.CapstoneProjectApplicationTests    : Started CapstoneProjectApplicationTests in 9.389 seconds (process running for 11.628)
+2026-10-06T15:53:41.607-04:00  WARN 8052 --- [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-06T15:53:41.608-04:00  WARN 8052 --- [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+.\mvnw.cmd : Mockito is currently self-attaching to enable the inline-mock-maker. This will no 
+longer work in future releases of the JDK. Please add Mockito as an agent to your build as described 
+in Mockito's documentation: 
+https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+At line:1 char:1
++ .\mvnw.cmd clean verify 2>&1 | Out-File verify.log -Encoding UTF8
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Mockito is curr...ockito.html#0.3:String) [], RemoteExc 
+   eption
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+WARNING: A Java agent has been loaded dynamically (C:\Users\carlos.rhymer\.m2\repository\net\bytebudd
+y\byte-buddy-agent\1.18.11\byte-buddy-agent-1.18.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide 
+this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for 
+more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because 
+bootstrap classpath has been appended
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.85 s -- in org.peopleshores.capstone_project.CapstoneProjectApplicationTests
+[INFO] Running ArtifactController
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.623 s -- in ArtifactController
+[INFO] Running Exhibition, public and visitor controllers
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.241 s -- in Exhibition, public and visitor controllers
+[INFO] Running ArtifactResponse
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.140 s -- in ArtifactResponse
+[INFO] Running Exhibition response mapping
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in Exhibition response mapping
+[INFO] Running Exhibition
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in Exhibition
+[INFO] Running GlobalExceptionHandler
+2026-10-06T15:53:43.738-04:00  WARN 8052 --- [           main] o.p.c.exception.GlobalExceptionHandler   : Access denied on /api/v1/artifacts
+2026-10-06T15:53:43.747-04:00 ERROR 8052 --- [           main] o.p.c.exception.GlobalExceptionHandler   : Unhandled exception
+
+java.lang.IllegalStateException: boom
+	at org.peopleshores.capstone_project.exception.GlobalExceptionHandlerTest.unexpectedIs500(GlobalExceptionHandlerTest.java:113) ~[test-classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:701) ~[junit-platform-commons-6.0.3.jar:6.0.3]
+	at org.junit.platform.commons.support.ReflectionSupport.invokeMethod(ReflectionSupport.java:502) ~[junit-platform-commons-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.support.MethodReflectionUtils.invoke(MethodReflectionUtils.java:45) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:61) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:124) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:163) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:148) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:123) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:105) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:99) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:66) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:47) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:39) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:104) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:98) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invokeVoid(InterceptingExecutableInvoker.java:71) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$0(TestMethodTestDescriptor.java:219) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:215) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:157) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:70) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:176) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:36) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:52) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:58) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.executeEngine(EngineExecutionOrchestrator.java:246) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.failOrExecuteEngine(EngineExecutionOrchestrator.java:218) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:179) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:66) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:157) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:65) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:125) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:58) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$2(InterceptingLauncher.java:57) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:56) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:58) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.apache.maven.surefire.api.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:125) ~[surefire-api-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.executeWithCancellationToken(LauncherAdapter.java:68) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.execute(LauncherAdapter.java:54) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:203) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:168) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:136) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) ~[surefire-booter-3.5.6.jar:3.5.6]
+Caused by: java.lang.NullPointerException: inner
+	... 82 common frames omitted
+
+2026-10-06T15:53:43.758-04:00  WARN 8052 --- [           main] o.p.c.exception.GlobalExceptionHandler   : Database constraint violated
+
+org.springframework.dao.DataIntegrityViolationException: Duplicate entry for key uq_artifacts_accession
+	at org.peopleshores.capstone_project.exception.GlobalExceptionHandlerTest.dataIntegrityIs409(GlobalExceptionHandlerTest.java:89) ~[test-classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:701) ~[junit-platform-commons-6.0.3.jar:6.0.3]
+	at org.junit.platform.commons.support.ReflectionSupport.invokeMethod(ReflectionSupport.java:502) ~[junit-platform-commons-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.support.MethodReflectionUtils.invoke(MethodReflectionUtils.java:45) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:61) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:124) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:163) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:148) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:123) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:105) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:99) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:66) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:47) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:39) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:104) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:98) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invokeVoid(InterceptingExecutableInvoker.java:71) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$0(TestMethodTestDescriptor.java:219) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:215) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:157) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:70) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:176) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:36) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:52) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:58) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.executeEngine(EngineExecutionOrchestrator.java:246) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.failOrExecuteEngine(EngineExecutionOrchestrator.java:218) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:179) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:66) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:157) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:65) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:125) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:58) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$2(InterceptingLauncher.java:57) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:56) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:58) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.apache.maven.surefire.api.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:125) ~[surefire-api-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.executeWithCancellationToken(LauncherAdapter.java:68) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.execute(LauncherAdapter.java:54) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:203) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:168) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:136) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) ~[surefire-booter-3.5.6.jar:3.5.6]
+
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.412 s -- in GlobalExceptionHandler
+[INFO] Running AppUserDetailsService
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.209 s -- in AppUserDetailsService
+[INFO] Running JwtAuthenticationFilter
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.363 s -- in JwtAuthenticationFilter
+[INFO] Running JwtService
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.318 s -- in JwtService
+[INFO] Running ArtifactService catalogue operations
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.311 s -- in ArtifactService catalogue operations
+[INFO] Running ArtifactService
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s -- in ArtifactService
+[INFO] Running AuthService
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.275 s -- in AuthService
+[INFO] Running ExhibitionService
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.272 s -- in ExhibitionService
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 101, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jacoco:0.8.15:report (report) @ Capstone_project ---
+[INFO] Loading execution data file C:\dev\Capstone_project\target\jacoco.exec
+[INFO] Analyzed bundle 'Museum Artifact Manager' with 50 classes
+[INFO] 
+[INFO] --- jar:3.5.1:jar (default-jar) @ Capstone_project ---
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.3/plexus-utils-4.0.3.jar
+Progress (1): 0.9/193 kB
+Progress (1): 2.3/193 kB
+Progress (1): 3.6/193 kB
+Progress (1): 5.0/193 kB
+Progress (1): 6.4/193 kB
+Progress (1): 7.7/193 kB
+Progress (1): 9.1/193 kB
+Progress (1): 10/193 kB 
+Progress (1): 12/193 kB
+Progress (1): 13/193 kB
+Progress (1): 15/193 kB
+Progress (1): 16/193 kB
+Progress (1): 17/193 kB
+Progress (1): 19/193 kB
+Progress (1): 20/193 kB
+Progress (1): 21/193 kB
+Progress (1): 23/193 kB
+Progress (1): 24/193 kB
+Progress (1): 25/193 kB
+Progress (1): 27/193 kB
+Progress (1): 28/193 kB
+Progress (1): 30/193 kB
+Progress (1): 31/193 kB
+Progress (1): 32/193 kB
+Progress (1): 34/193 kB
+Progress (1): 35/193 kB
+Progress (1): 36/193 kB
+Progress (1): 38/193 kB
+Progress (1): 39/193 kB
+Progress (1): 41/193 kB
+Progress (1): 42/193 kB
+Progress (1): 43/193 kB
+Progress (1): 45/193 kB
+Progress (1): 46/193 kB
+Progress (1): 47/193 kB
+Progress (1): 49/193 kB
+Progress (1): 50/193 kB
+Progress (1): 51/193 kB
+Progress (1): 53/193 kB
+Progress (1): 54/193 kB
+Progress (1): 56/193 kB
+Progress (1): 60/193 kB
+Progress (1): 64/193 kB
+Progress (1): 68/193 kB
+Progress (1): 73/193 kB
+Progress (1): 77/193 kB
+Progress (1): 81/193 kB
+Progress (1): 85/193 kB
+Progress (1): 89/193 kB
+Progress (1): 94/193 kB
+Progress (1): 98/193 kB
+Progress (1): 102/193 kB
+Progress (1): 106/193 kB
+Progress (1): 111/193 kB
+Progress (1): 115/193 kB
+Progress (1): 119/193 kB
+Progress (1): 123/193 kB
+Progress (1): 127/193 kB
+Progress (1): 132/193 kB
+Progress (1): 136/193 kB
+Progress (1): 140/193 kB
+Progress (1): 144/193 kB
+Progress (1): 149/193 kB
+Progress (1): 153/193 kB
+Progress (1): 155/193 kB
+Progress (1): 159/193 kB
+Progress (1): 164/193 kB
+Progress (1): 168/193 kB
+Progress (1): 172/193 kB
+Progress (1): 176/193 kB
+Progress (1): 181/193 kB
+Progress (1): 185/193 kB
+Progress (1): 189/193 kB
+Progress (1): 193 kB    
+                    
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.3/plexus-utils-4.0.3.jar (193 kB at 448 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.6.6/maven-archiver-3.6.6.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.12.0/plexus-archiver-4.12.0.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.6.0/plexus-io-3.6.0.jar
+Downloading from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.19.0/commons-codec-1.19.0.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.28.0/commons-compress-1.28.0.jar
+Progress (1): 3.8/375 kB
+Progress (1): 8.0/375 kB
+Progress (1): 12/375 kB 
+Progress (1): 16/375 kB
+Progress (1): 21/375 kB
+Progress (1): 24/375 kB
+Progress (1): 28/375 kB
+Progress (1): 45/375 kB
+Progress (1): 61/375 kB
+Progress (1): 77/375 kB
+Progress (1): 94/375 kB
+Progress (1): 110/375 kB
+Progress (1): 127/375 kB
+Progress (1): 143/375 kB
+Progress (1): 155/375 kB
+Progress (1): 172/375 kB
+Progress (1): 188/375 kB
+Progress (1): 204/375 kB
+Progress (1): 221/375 kB
+Progress (1): 237/375 kB
+Progress (1): 253/375 kB
+Progress (1): 270/375 kB
+Progress (1): 286/375 kB
+Progress (1): 303/375 kB
+Progress (1): 319/375 kB
+Progress (2): 319/375 kB | 0.9/80 kB
+Progress (2): 319/375 kB | 2.3/80 kB
+Progress (2): 319/375 kB | 3.6/80 kB
+Progress (2): 319/375 kB | 5.0/80 kB
+Progress (2): 319/375 kB | 6.4/80 kB
+Progress (2): 319/375 kB | 7.7/80 kB
+Progress (2): 319/375 kB | 9.1/80 kB
+Progress (2): 319/375 kB | 10/80 kB 
+Progress (2): 319/375 kB | 11/80 kB
+Progress (2): 335/375 kB | 11/80 kB
+Progress (2): 335/375 kB | 13/80 kB
+Progress (2): 335/375 kB | 14/80 kB
+Progress (2): 335/375 kB | 15/80 kB
+Progress (2): 335/375 kB | 17/80 kB
+Progress (2): 335/375 kB | 18/80 kB
+Progress (2): 335/375 kB | 20/80 kB
+Progress (2): 335/375 kB | 21/80 kB
+Progress (2): 335/375 kB | 22/80 kB
+Progress (2): 335/375 kB | 24/80 kB
+Progress (2): 335/375 kB | 25/80 kB
+Progress (2): 335/375 kB | 26/80 kB
+Progress (2): 335/375 kB | 28/80 kB
+Progress (2): 335/375 kB | 29/80 kB
+Progress (2): 335/375 kB | 31/80 kB
+Progress (2): 335/375 kB | 32/80 kB
+Progress (2): 335/375 kB | 33/80 kB
+Progress (2): 335/375 kB | 35/80 kB
+Progress (2): 352/375 kB | 35/80 kB
+Progress (2): 352/375 kB | 36/80 kB
+Progress (2): 352/375 kB | 37/80 kB
+Progress (2): 352/375 kB | 39/80 kB
+Progress (2): 352/375 kB | 40/80 kB
+Progress (2): 352/375 kB | 41/80 kB
+Progress (2): 352/375 kB | 43/80 kB
+Progress (2): 352/375 kB | 44/80 kB
+Progress (2): 352/375 kB | 46/80 kB
+Progress (2): 352/375 kB | 47/80 kB
+Progress (3): 352/375 kB | 47/80 kB | 0.9/227 kB
+Progress (3): 352/375 kB | 47/80 kB | 2.3/227 kB
+Progress (3): 352/375 kB | 48/80 kB | 2.3/227 kB
+Progress (3): 352/375 kB | 48/80 kB | 3.6/227 kB
+Progress (3): 352/375 kB | 50/80 kB | 3.6/227 kB
+Progress (3): 352/375 kB | 51/80 kB | 3.6/227 kB
+Progress (3): 352/375 kB | 51/80 kB | 5.0/227 kB
+Progress (3): 352/375 kB | 51/80 kB | 6.4/227 kB
+Progress (3): 352/375 kB | 52/80 kB | 6.4/227 kB
+Progress (3): 352/375 kB | 52/80 kB | 7.7/227 kB
+Progress (3): 352/375 kB | 52/80 kB | 9.1/227 kB
+Progress (3): 352/375 kB | 54/80 kB | 9.1/227 kB
+Progress (3): 368/375 kB | 54/80 kB | 9.1/227 kB
+Progress (3): 368/375 kB | 54/80 kB | 10/227 kB 
+Progress (3): 368/375 kB | 54/80 kB | 12/227 kB
+Progress (3): 368/375 kB | 55/80 kB | 12/227 kB
+Progress (3): 368/375 kB | 55/80 kB | 13/227 kB
+Progress (3): 375 kB | 55/80 kB | 13/227 kB    
+Progress (3): 375 kB | 55/80 kB | 15/227 kB
+Progress (3): 375 kB | 55/80 kB | 16/227 kB
+Progress (3): 375 kB | 59/80 kB | 16/227 kB
+Progress (3): 375 kB | 59/80 kB | 17/227 kB
+Progress (3): 375 kB | 59/80 kB | 19/227 kB
+Progress (3): 375 kB | 64/80 kB | 19/227 kB
+Progress (3): 375 kB | 64/80 kB | 20/227 kB
+Progress (3): 375 kB | 64/80 kB | 21/227 kB
+Progress (3): 375 kB | 64/80 kB | 23/227 kB
+Progress (3): 375 kB | 68/80 kB | 23/227 kB
+Progress (3): 375 kB | 68/80 kB | 24/227 kB
+Progress (3): 375 kB | 72/80 kB | 24/227 kB
+Progress (3): 375 kB | 72/80 kB | 25/227 kB
+Progress (3): 375 kB | 72/80 kB | 27/227 kB
+Progress (3): 375 kB | 72/80 kB | 28/227 kB
+Progress (3): 375 kB | 72/80 kB | 30/227 kB
+Progress (3): 375 kB | 72/80 kB | 31/227 kB
+Progress (3): 375 kB | 72/80 kB | 32/227 kB
+Progress (3): 375 kB | 72/80 kB | 34/227 kB
+Progress (3): 375 kB | 72/80 kB | 35/227 kB
+Progress (3): 375 kB | 72/80 kB | 36/227 kB
+Progress (4): 375 kB | 72/80 kB | 36/227 kB | 0.9/28 kB
+Progress (4): 375 kB | 72/80 kB | 38/227 kB | 0.9/28 kB
+Progress (4): 375 kB | 72/80 kB | 39/227 kB | 0.9/28 kB
+Progress (4): 375 kB | 72/80 kB | 39/227 kB | 2.3/28 kB
+Progress (4): 375 kB | 72/80 kB | 41/227 kB | 2.3/28 kB
+Progress (4): 375 kB | 72/80 kB | 41/227 kB | 3.6/28 kB
+Progress (4): 375 kB | 72/80 kB | 42/227 kB | 3.6/28 kB
+Progress (4): 375 kB | 72/80 kB | 43/227 kB | 3.6/28 kB
+Progress (4): 375 kB | 72/80 kB | 45/227 kB | 3.6/28 kB
+Progress (4): 375 kB | 72/80 kB | 46/227 kB | 3.6/28 kB
+Progress (4): 375 kB | 72/80 kB | 47/227 kB | 3.6/28 kB
+Progress (4): 375 kB | 72/80 kB | 49/227 kB | 3.6/28 kB
+Progress (4): 375 kB | 72/80 kB | 50/227 kB | 3.6/28 kB
+Progress (4): 375 kB | 72/80 kB | 51/227 kB | 3.6/28 kB
+Progress (4): 375 kB | 72/80 kB | 53/227 kB | 3.6/28 kB
+Progress (4): 375 kB | 72/80 kB | 54/227 kB | 3.6/28 kB
+Progress (4): 375 kB | 72/80 kB | 56/227 kB | 3.6/28 kB
+Progress (4): 375 kB | 72/80 kB | 60/227 kB | 3.6/28 kB
+Progress (4): 375 kB | 72/80 kB | 64/227 kB | 3.6/28 kB
+Progress (4): 375 kB | 72/80 kB | 68/227 kB | 3.6/28 kB
+Progress (4): 375 kB | 72/80 kB | 68/227 kB | 5.0/28 kB
+Progress (4): 375 kB | 72/80 kB | 68/227 kB | 6.4/28 kB
+Progress (4): 375 kB | 72/80 kB | 68/227 kB | 7.7/28 kB
+Progress (4): 375 kB | 72/80 kB | 68/227 kB | 8.2/28 kB
+Progress (4): 375 kB | 72/80 kB | 68/227 kB | 9.6/28 kB
+Progress (4): 375 kB | 72/80 kB | 68/227 kB | 11/28 kB 
+Progress (4): 375 kB | 72/80 kB | 68/227 kB | 12/28 kB
+Progress (4): 375 kB | 72/80 kB | 68/227 kB | 14/28 kB
+Progress (4): 375 kB | 72/80 kB | 68/227 kB | 15/28 kB
+Progress (4): 375 kB | 72/80 kB | 68/227 kB | 16/28 kB
+Progress (4): 375 kB | 72/80 kB | 68/227 kB | 18/28 kB
+Progress (4): 375 kB | 72/80 kB | 68/227 kB | 19/28 kB
+Progress (4): 375 kB | 72/80 kB | 68/227 kB | 21/28 kB
+Progress (4): 375 kB | 72/80 kB | 68/227 kB | 22/28 kB
+Progress (4): 375 kB | 72/80 kB | 68/227 kB | 23/28 kB
+Progress (4): 375 kB | 72/80 kB | 68/227 kB | 25/28 kB
+Progress (4): 375 kB | 72/80 kB | 68/227 kB | 26/28 kB
+Progress (4): 375 kB | 72/80 kB | 68/227 kB | 27/28 kB
+Progress (4): 375 kB | 72/80 kB | 68/227 kB | 28 kB   
+Progress (5): 375 kB | 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+                                                              
+Downloaded from central: https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.19.0/commons-codec-1.19.0.jar (375 kB at 2.5 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0.jar
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0.1/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0.1/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0.1/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0.1/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0.1/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0.1/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0.1/1.1 MB
+Progress (4): 72/80 kB | 68/227 kB | 28 kB | 0.1/1.1 MB
+                                                       
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.6.6/maven-archiver-3.6.6.jar (28 kB at 179 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.12/xz-1.12.jar
+Progress (3): 76/80 kB | 68/227 kB | 0.1/1.1 MB
+Progress (3): 76/80 kB | 73/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 73/227 kB | 0.1/1.1 MB   
+Progress (3): 80 kB | 77/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 81/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 85/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 89/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 94/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 98/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 102/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 106/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 111/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 115/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 119/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 123/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 127/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 131/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 135/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 135/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 140/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 144/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 144/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 148/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 148/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 152/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 152/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 156/227 kB | 0.1/1.1 MB
+Progress (3): 80 kB | 156/227 kB | 0.1/1.1 MB
+                                             
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.6.0/plexus-io-3.6.0.jar (80 kB at 459 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/com/github/luben/zstd-jni/1.5.7-9/zstd-jni-1.5.7-9.jar
+Progress (2): 156/227 kB | 0.1/1.1 MB
+Progress (2): 161/227 kB | 0.1/1.1 MB
+Progress (2): 164/227 kB | 0.1/1.1 MB
+Progress (2): 164/227 kB | 0.1/1.1 MB
+Progress (2): 168/227 kB | 0.1/1.1 MB
+Progress (2): 168/227 kB | 0.1/1.1 MB
+Progress (2): 172/227 kB | 0.1/1.1 MB
+Progress (2): 172/227 kB | 0.1/1.1 MB
+Progress (2): 177/227 kB | 0.1/1.1 MB
+Progress (2): 177/227 kB | 0.1/1.1 MB
+Progress (2): 177/227 kB | 0.1/1.1 MB
+Progress (2): 181/227 kB | 0.1/1.1 MB
+Progress (2): 181/227 kB | 0.1/1.1 MB
+Progress (2): 185/227 kB | 0.1/1.1 MB
+Progress (2): 185/227 kB | 0.1/1.1 MB
+Progress (2): 185/227 kB | 0.1/1.1 MB
+Progress (2): 185/227 kB | 0.1/1.1 MB
+Progress (2): 185/227 kB | 0.1/1.1 MB
+Progress (2): 185/227 kB | 0.1/1.1 MB
+Progress (2): 185/227 kB | 0.1/1.1 MB
+Progress (2): 185/227 kB | 0.1/1.1 MB
+Progress (2): 185/227 kB | 0.2/1.1 MB
+Progress (2): 185/227 kB | 0.2/1.1 MB
+Progress (2): 185/227 kB | 0.2/1.1 MB
+Progress (2): 189/227 kB | 0.2/1.1 MB
+Progress (2): 189/227 kB | 0.2/1.1 MB
+Progress (2): 193/227 kB | 0.2/1.1 MB
+Progress (2): 193/227 kB | 0.2/1.1 MB
+Progress (2): 193/227 kB | 0.2/1.1 MB
+Progress (2): 198/227 kB | 0.2/1.1 MB
+Progress (2): 202/227 kB | 0.2/1.1 MB
+Progress (2): 205/227 kB | 0.2/1.1 MB
+Progress (2): 209/227 kB | 0.2/1.1 MB
+Progress (2): 209/227 kB | 0.2/1.1 MB
+Progress (2): 213/227 kB | 0.2/1.1 MB
+Progress (2): 217/227 kB | 0.2/1.1 MB
+Progress (2): 222/227 kB | 0.2/1.1 MB
+Progress (2): 222/227 kB | 0.2/1.1 MB
+Progress (2): 222/227 kB | 0.2/1.1 MB
+Progress (2): 227 kB | 0.2/1.1 MB    
+Progress (2): 227 kB | 0.2/1.1 MB
+Progress (2): 227 kB | 0.2/1.1 MB
+Progress (2): 227 kB | 0.2/1.1 MB
+Progress (3): 227 kB | 0.2/1.1 MB | 0.9/703 kB
+Progress (3): 227 kB | 0.2/1.1 MB | 2.3/703 kB
+Progress (3): 227 kB | 0.2/1.1 MB | 3.6/703 kB
+Progress (3): 227 kB | 0.2/1.1 MB | 5.0/703 kB
+Progress (3): 227 kB | 0.2/1.1 MB | 6.4/703 kB
+Progress (3): 227 kB | 0.2/1.1 MB | 7.7/703 kB
+Progress (3): 227 kB | 0.2/1.1 MB | 9.1/703 kB
+Progress (3): 227 kB | 0.2/1.1 MB | 10/703 kB 
+Progress (3): 227 kB | 0.2/1.1 MB | 11/703 kB
+Progress (3): 227 kB | 0.2/1.1 MB | 13/703 kB
+Progress (3): 227 kB | 0.2/1.1 MB | 14/703 kB
+Progress (3): 227 kB | 0.2/1.1 MB | 15/703 kB
+Progress (3): 227 kB | 0.2/1.1 MB | 17/703 kB
+Progress (3): 227 kB | 0.2/1.1 MB | 18/703 kB
+Progress (3): 227 kB | 0.2/1.1 MB | 20/703 kB
+Progress (3): 227 kB | 0.2/1.1 MB | 21/703 kB
+Progress (3): 227 kB | 0.2/1.1 MB | 22/703 kB
+Progress (3): 227 kB | 0.2/1.1 MB | 24/703 kB
+Progress (3): 227 kB | 0.2/1.1 MB | 25/703 kB
+                                             
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.12.0/plexus-archiver-4.12.0.jar (227 kB at 1.1 MB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.22.0/commons-io-2.22.0.jar
+Progress (2): 0.2/1.1 MB | 29/703 kB
+Progress (2): 0.2/1.1 MB | 34/703 kB
+Progress (2): 0.2/1.1 MB | 38/703 kB
+Progress (2): 0.2/1.1 MB | 42/703 kB
+Progress (2): 0.2/1.1 MB | 46/703 kB
+Progress (2): 0.2/1.1 MB | 50/703 kB
+Progress (2): 0.2/1.1 MB | 55/703 kB
+Progress (2): 0.2/1.1 MB | 59/703 kB
+Progress (2): 0.2/1.1 MB | 63/703 kB
+Progress (2): 0.2/1.1 MB | 67/703 kB
+Progress (2): 0.2/1.1 MB | 72/703 kB
+Progress (2): 0.2/1.1 MB | 76/703 kB
+Progress (2): 0.2/1.1 MB | 80/703 kB
+Progress (2): 0.2/1.1 MB | 84/703 kB
+Progress (2): 0.2/1.1 MB | 84/703 kB
+Progress (2): 0.2/1.1 MB | 88/703 kB
+Progress (2): 0.2/1.1 MB | 88/703 kB
+Progress (3): 0.2/1.1 MB | 88/703 kB | 7.7/169 kB
+Progress (3): 0.2/1.1 MB | 93/703 kB | 7.7/169 kB
+Progress (3): 0.2/1.1 MB | 93/703 kB | 16/169 kB 
+Progress (3): 0.2/1.1 MB | 93/703 kB | 16/169 kB
+Progress (3): 0.2/1.1 MB | 97/703 kB | 16/169 kB
+Progress (3): 0.2/1.1 MB | 101/703 kB | 16/169 kB
+Progress (3): 0.2/1.1 MB | 105/703 kB | 16/169 kB
+Progress (3): 0.2/1.1 MB | 110/703 kB | 16/169 kB
+Progress (3): 0.2/1.1 MB | 110/703 kB | 32/169 kB
+Progress (3): 0.2/1.1 MB | 110/703 kB | 49/169 kB
+Progress (3): 0.2/1.1 MB | 110/703 kB | 65/169 kB
+Progress (3): 0.2/1.1 MB | 110/703 kB | 65/169 kB
+Progress (3): 0.2/1.1 MB | 114/703 kB | 65/169 kB
+Progress (3): 0.2/1.1 MB | 114/703 kB | 65/169 kB
+Progress (3): 0.2/1.1 MB | 114/703 kB | 81/169 kB
+Progress (3): 0.2/1.1 MB | 118/703 kB | 81/169 kB
+Progress (3): 0.2/1.1 MB | 122/703 kB | 81/169 kB
+Progress (3): 0.2/1.1 MB | 122/703 kB | 81/169 kB
+Progress (3): 0.2/1.1 MB | 127/703 kB | 81/169 kB
+Progress (3): 0.2/1.1 MB | 127/703 kB | 98/169 kB
+Progress (3): 0.2/1.1 MB | 127/703 kB | 114/169 kB
+Progress (3): 0.2/1.1 MB | 127/703 kB | 131/169 kB
+Progress (3): 0.3/1.1 MB | 127/703 kB | 131/169 kB
+Progress (3): 0.3/1.1 MB | 127/703 kB | 147/169 kB
+Progress (3): 0.3/1.1 MB | 127/703 kB | 163/169 kB
+Progress (3): 0.3/1.1 MB | 127/703 kB | 169 kB    
+Progress (3): 0.3/1.1 MB | 127/703 kB | 169 kB
+Progress (3): 0.3/1.1 MB | 127/703 kB | 169 kB
+Progress (3): 0.3/1.1 MB | 127/703 kB | 169 kB
+                                              
+Downloaded from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.12/xz-1.12.jar (169 kB at 616 kB/s)
+Progress (2): 0.3/1.1 MB | 127/703 kB
+Progress (2): 0.3/1.1 MB | 127/703 kB
+Progress (2): 0.3/1.1 MB | 127/703 kB
+Progress (2): 0.4/1.1 MB | 127/703 kB
+Progress (2): 0.4/1.1 MB | 127/703 kB
+Progress (3): 0.4/1.1 MB | 127/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 127/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 127/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 127/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 131/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 131/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 131/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 135/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 135/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 139/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 139/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 142/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 142/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 147/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 151/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 155/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 155/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 159/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 159/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 159/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 164/703 kB | 0/7.6 MB
+Progress (3): 0.4/1.1 MB | 164/703 kB | 0.1/7.6 MB
+Progress (3): 0.4/1.1 MB | 168/703 kB | 0.1/7.6 MB
+Progress (3): 0.4/1.1 MB | 168/703 kB | 0.1/7.6 MB
+Progress (3): 0.4/1.1 MB | 172/703 kB | 0.1/7.6 MB
+Progress (3): 0.4/1.1 MB | 176/703 kB | 0.1/7.6 MB
+Progress (4): 0.4/1.1 MB | 176/703 kB | 0.1/7.6 MB | 7.7/609 kB
+Progress (4): 0.4/1.1 MB | 176/703 kB | 0.1/7.6 MB | 8.2/609 kB
+Progress (4): 0.4/1.1 MB | 181/703 kB | 0.1/7.6 MB | 8.2/609 kB
+Progress (4): 0.4/1.1 MB | 181/703 kB | 0.1/7.6 MB | 8.2/609 kB
+Progress (4): 0.4/1.1 MB | 181/703 kB | 0.1/7.6 MB | 8.2/609 kB
+Progress (4): 0.4/1.1 MB | 181/703 kB | 0.1/7.6 MB | 8.2/609 kB
+Progress (4): 0.4/1.1 MB | 181/703 kB | 0.1/7.6 MB | 25/609 kB 
+Progress (4): 0.4/1.1 MB | 185/703 kB | 0.1/7.6 MB | 25/609 kB
+Progress (4): 0.4/1.1 MB | 185/703 kB | 0.1/7.6 MB | 25/609 kB
+Progress (4): 0.4/1.1 MB | 189/703 kB | 0.1/7.6 MB | 25/609 kB
+Progress (4): 0.4/1.1 MB | 189/703 kB | 0.1/7.6 MB | 25/609 kB
+Progress (4): 0.4/1.1 MB | 193/703 kB | 0.1/7.6 MB | 25/609 kB
+Progress (4): 0.4/1.1 MB | 193/703 kB | 0.1/7.6 MB | 25/609 kB
+Progress (4): 0.4/1.1 MB | 193/703 kB | 0.1/7.6 MB | 41/609 kB
+Progress (4): 0.4/1.1 MB | 193/703 kB | 0.1/7.6 MB | 41/609 kB
+Progress (4): 0.4/1.1 MB | 193/703 kB | 0.1/7.6 MB | 41/609 kB
+Progress (4): 0.4/1.1 MB | 193/703 kB | 0.1/7.6 MB | 41/609 kB
+Progress (4): 0.4/1.1 MB | 208/703 kB | 0.1/7.6 MB | 41/609 kB
+Progress (4): 0.4/1.1 MB | 208/703 kB | 0.1/7.6 MB | 57/609 kB
+Progress (4): 0.4/1.1 MB | 208/703 kB | 0.1/7.6 MB | 57/609 kB
+Progress (4): 0.4/1.1 MB | 208/703 kB | 0.1/7.6 MB | 61/609 kB
+Progress (4): 0.4/1.1 MB | 208/703 kB | 0.1/7.6 MB | 61/609 kB
+Progress (4): 0.4/1.1 MB | 224/703 kB | 0.1/7.6 MB | 61/609 kB
+Progress (4): 0.4/1.1 MB | 224/703 kB | 0.1/7.6 MB | 77/609 kB
+Progress (4): 0.4/1.1 MB | 241/703 kB | 0.1/7.6 MB | 77/609 kB
+Progress (4): 0.4/1.1 MB | 241/703 kB | 0.1/7.6 MB | 93/609 kB
+Progress (4): 0.4/1.1 MB | 249/703 kB | 0.1/7.6 MB | 93/609 kB
+Progress (4): 0.4/1.1 MB | 249/703 kB | 0.1/7.6 MB | 110/609 kB
+Progress (4): 0.4/1.1 MB | 249/703 kB | 0.1/7.6 MB | 110/609 kB
+Progress (4): 0.4/1.1 MB | 249/703 kB | 0.1/7.6 MB | 126/609 kB
+Progress (4): 0.4/1.1 MB | 249/703 kB | 0.1/7.6 MB | 142/609 kB
+Progress (4): 0.4/1.1 MB | 249/703 kB | 0.1/7.6 MB | 142/609 kB
+Progress (4): 0.4/1.1 MB | 265/703 kB | 0.1/7.6 MB | 142/609 kB
+Progress (4): 0.4/1.1 MB | 265/703 kB | 0.1/7.6 MB | 142/609 kB
+Progress (4): 0.4/1.1 MB | 265/703 kB | 0.1/7.6 MB | 142/609 kB
+Progress (4): 0.4/1.1 MB | 265/703 kB | 0.1/7.6 MB | 142/609 kB
+Progress (4): 0.4/1.1 MB | 265/703 kB | 0.1/7.6 MB | 159/609 kB
+Progress (4): 0.4/1.1 MB | 265/703 kB | 0.1/7.6 MB | 159/609 kB
+Progress (4): 0.4/1.1 MB | 282/703 kB | 0.1/7.6 MB | 159/609 kB
+Progress (4): 0.4/1.1 MB | 282/703 kB | 0.1/7.6 MB | 175/609 kB
+Progress (4): 0.4/1.1 MB | 282/703 kB | 0.1/7.6 MB | 175/609 kB
+Progress (4): 0.4/1.1 MB | 282/703 kB | 0.1/7.6 MB | 183/609 kB
+Progress (4): 0.4/1.1 MB | 282/703 kB | 0.1/7.6 MB | 183/609 kB
+Progress (4): 0.4/1.1 MB | 282/703 kB | 0.1/7.6 MB | 183/609 kB
+Progress (4): 0.4/1.1 MB | 282/703 kB | 0.1/7.6 MB | 183/609 kB
+Progress (4): 0.4/1.1 MB | 298/703 kB | 0.1/7.6 MB | 183/609 kB
+Progress (4): 0.4/1.1 MB | 298/703 kB | 0.1/7.6 MB | 183/609 kB
+Progress (4): 0.4/1.1 MB | 298/703 kB | 0.1/7.6 MB | 200/609 kB
+Progress (4): 0.4/1.1 MB | 298/703 kB | 0.1/7.6 MB | 200/609 kB
+Progress (4): 0.4/1.1 MB | 314/703 kB | 0.1/7.6 MB | 200/609 kB
+Progress (4): 0.4/1.1 MB | 314/703 kB | 0.2/7.6 MB | 200/609 kB
+Progress (4): 0.4/1.1 MB | 331/703 kB | 0.2/7.6 MB | 200/609 kB
+Progress (4): 0.4/1.1 MB | 331/703 kB | 0.2/7.6 MB | 200/609 kB
+Progress (4): 0.4/1.1 MB | 331/703 kB | 0.2/7.6 MB | 216/609 kB
+Progress (4): 0.4/1.1 MB | 331/703 kB | 0.2/7.6 MB | 216/609 kB
+Progress (4): 0.4/1.1 MB | 331/703 kB | 0.2/7.6 MB | 216/609 kB
+Progress (4): 0.4/1.1 MB | 347/703 kB | 0.2/7.6 MB | 216/609 kB
+Progress (4): 0.4/1.1 MB | 347/703 kB | 0.2/7.6 MB | 216/609 kB
+Progress (4): 0.5/1.1 MB | 347/703 kB | 0.2/7.6 MB | 216/609 kB
+Progress (4): 0.5/1.1 MB | 347/703 kB | 0.2/7.6 MB | 233/609 kB
+Progress (4): 0.5/1.1 MB | 364/703 kB | 0.2/7.6 MB | 233/609 kB
+Progress (4): 0.5/1.1 MB | 364/703 kB | 0.2/7.6 MB | 249/609 kB
+Progress (4): 0.5/1.1 MB | 364/703 kB | 0.2/7.6 MB | 249/609 kB
+Progress (4): 0.5/1.1 MB | 380/703 kB | 0.2/7.6 MB | 249/609 kB
+Progress (4): 0.5/1.1 MB | 380/703 kB | 0.2/7.6 MB | 265/609 kB
+Progress (4): 0.5/1.1 MB | 380/703 kB | 0.2/7.6 MB | 265/609 kB
+Progress (4): 0.5/1.1 MB | 380/703 kB | 0.2/7.6 MB | 282/609 kB
+Progress (4): 0.5/1.1 MB | 380/703 kB | 0.2/7.6 MB | 282/609 kB
+Progress (4): 0.5/1.1 MB | 380/703 kB | 0.2/7.6 MB | 298/609 kB
+Progress (4): 0.5/1.1 MB | 380/703 kB | 0.2/7.6 MB | 298/609 kB
+Progress (4): 0.5/1.1 MB | 380/703 kB | 0.2/7.6 MB | 298/609 kB
+Progress (4): 0.5/1.1 MB | 380/703 kB | 0.2/7.6 MB | 298/609 kB
+Progress (4): 0.5/1.1 MB | 380/703 kB | 0.2/7.6 MB | 298/609 kB
+Progress (4): 0.5/1.1 MB | 380/703 kB | 0.2/7.6 MB | 314/609 kB
+Progress (4): 0.5/1.1 MB | 396/703 kB | 0.2/7.6 MB | 314/609 kB
+Progress (4): 0.6/1.1 MB | 396/703 kB | 0.2/7.6 MB | 314/609 kB
+Progress (4): 0.6/1.1 MB | 396/703 kB | 0.2/7.6 MB | 314/609 kB
+Progress (4): 0.6/1.1 MB | 413/703 kB | 0.2/7.6 MB | 314/609 kB
+Progress (4): 0.6/1.1 MB | 429/703 kB | 0.2/7.6 MB | 314/609 kB
+Progress (4): 0.6/1.1 MB | 446/703 kB | 0.2/7.6 MB | 314/609 kB
+Progress (4): 0.6/1.1 MB | 446/703 kB | 0.2/7.6 MB | 314/609 kB
+Progress (4): 0.6/1.1 MB | 446/703 kB | 0.2/7.6 MB | 314/609 kB
+Progress (4): 0.6/1.1 MB | 446/703 kB | 0.2/7.6 MB | 331/609 kB
+Progress (4): 0.6/1.1 MB | 446/703 kB | 0.3/7.6 MB | 331/609 kB
+Progress (4): 0.6/1.1 MB | 446/703 kB | 0.3/7.6 MB | 347/609 kB
+Progress (4): 0.6/1.1 MB | 462/703 kB | 0.3/7.6 MB | 347/609 kB
+Progress (4): 0.6/1.1 MB | 462/703 kB | 0.3/7.6 MB | 347/609 kB
+Progress (4): 0.6/1.1 MB | 462/703 kB | 0.3/7.6 MB | 347/609 kB
+Progress (4): 0.6/1.1 MB | 462/703 kB | 0.3/7.6 MB | 364/609 kB
+Progress (4): 0.6/1.1 MB | 462/703 kB | 0.3/7.6 MB | 364/609 kB
+Progress (4): 0.6/1.1 MB | 478/703 kB | 0.3/7.6 MB | 364/609 kB
+Progress (4): 0.6/1.1 MB | 478/703 kB | 0.3/7.6 MB | 380/609 kB
+Progress (4): 0.6/1.1 MB | 495/703 kB | 0.3/7.6 MB | 380/609 kB
+Progress (4): 0.6/1.1 MB | 495/703 kB | 0.3/7.6 MB | 380/609 kB
+Progress (4): 0.6/1.1 MB | 511/703 kB | 0.3/7.6 MB | 380/609 kB
+Progress (4): 0.6/1.1 MB | 511/703 kB | 0.3/7.6 MB | 380/609 kB
+Progress (4): 0.6/1.1 MB | 511/703 kB | 0.3/7.6 MB | 396/609 kB
+Progress (4): 0.6/1.1 MB | 527/703 kB | 0.3/7.6 MB | 396/609 kB
+Progress (4): 0.6/1.1 MB | 527/703 kB | 0.3/7.6 MB | 413/609 kB
+Progress (4): 0.6/1.1 MB | 527/703 kB | 0.3/7.6 MB | 413/609 kB
+Progress (4): 0.6/1.1 MB | 544/703 kB | 0.3/7.6 MB | 413/609 kB
+Progress (4): 0.6/1.1 MB | 544/703 kB | 0.3/7.6 MB | 429/609 kB
+Progress (4): 0.6/1.1 MB | 560/703 kB | 0.3/7.6 MB | 429/609 kB
+Progress (4): 0.6/1.1 MB | 560/703 kB | 0.3/7.6 MB | 446/609 kB
+Progress (4): 0.6/1.1 MB | 560/703 kB | 0.3/7.6 MB | 462/609 kB
+Progress (4): 0.6/1.1 MB | 560/703 kB | 0.3/7.6 MB | 462/609 kB
+Progress (4): 0.6/1.1 MB | 560/703 kB | 0.4/7.6 MB | 462/609 kB
+Progress (4): 0.6/1.1 MB | 560/703 kB | 0.4/7.6 MB | 478/609 kB
+Progress (4): 0.6/1.1 MB | 560/703 kB | 0.4/7.6 MB | 478/609 kB
+Progress (4): 0.6/1.1 MB | 560/703 kB | 0.4/7.6 MB | 478/609 kB
+Progress (4): 0.6/1.1 MB | 577/703 kB | 0.4/7.6 MB | 478/609 kB
+Progress (4): 0.7/1.1 MB | 577/703 kB | 0.4/7.6 MB | 478/609 kB
+Progress (4): 0.7/1.1 MB | 577/703 kB | 0.4/7.6 MB | 478/609 kB
+Progress (4): 0.7/1.1 MB | 577/703 kB | 0.4/7.6 MB | 478/609 kB
+Progress (4): 0.7/1.1 MB | 577/703 kB | 0.4/7.6 MB | 478/609 kB
+Progress (4): 0.7/1.1 MB | 577/703 kB | 0.4/7.6 MB | 478/609 kB
+Progress (4): 0.7/1.1 MB | 577/703 kB | 0.4/7.6 MB | 478/609 kB
+Progress (4): 0.7/1.1 MB | 577/703 kB | 0.4/7.6 MB | 495/609 kB
+Progress (4): 0.7/1.1 MB | 593/703 kB | 0.4/7.6 MB | 495/609 kB
+Progress (4): 0.7/1.1 MB | 593/703 kB | 0.4/7.6 MB | 503/609 kB
+Progress (4): 0.7/1.1 MB | 601/703 kB | 0.4/7.6 MB | 503/609 kB
+Progress (4): 0.7/1.1 MB | 601/703 kB | 0.4/7.6 MB | 503/609 kB
+Progress (4): 0.7/1.1 MB | 601/703 kB | 0.4/7.6 MB | 520/609 kB
+Progress (4): 0.7/1.1 MB | 601/703 kB | 0.4/7.6 MB | 520/609 kB
+Progress (4): 0.7/1.1 MB | 601/703 kB | 0.4/7.6 MB | 520/609 kB
+Progress (4): 0.7/1.1 MB | 601/703 kB | 0.5/7.6 MB | 520/609 kB
+Progress (4): 0.7/1.1 MB | 601/703 kB | 0.5/7.6 MB | 520/609 kB
+Progress (4): 0.7/1.1 MB | 601/703 kB | 0.5/7.6 MB | 520/609 kB
+Progress (4): 0.7/1.1 MB | 601/703 kB | 0.5/7.6 MB | 536/609 kB
+Progress (4): 0.7/1.1 MB | 618/703 kB | 0.5/7.6 MB | 536/609 kB
+Progress (4): 0.7/1.1 MB | 618/703 kB | 0.5/7.6 MB | 536/609 kB
+Progress (4): 0.7/1.1 MB | 634/703 kB | 0.5/7.6 MB | 536/609 kB
+Progress (4): 0.8/1.1 MB | 634/703 kB | 0.5/7.6 MB | 536/609 kB
+Progress (4): 0.8/1.1 MB | 650/703 kB | 0.5/7.6 MB | 536/609 kB
+Progress (4): 0.8/1.1 MB | 650/703 kB | 0.5/7.6 MB | 536/609 kB
+Progress (4): 0.8/1.1 MB | 650/703 kB | 0.5/7.6 MB | 553/609 kB
+Progress (4): 0.8/1.1 MB | 667/703 kB | 0.5/7.6 MB | 553/609 kB
+Progress (4): 0.8/1.1 MB | 667/703 kB | 0.5/7.6 MB | 553/609 kB
+Progress (4): 0.8/1.1 MB | 683/703 kB | 0.5/7.6 MB | 553/609 kB
+Progress (4): 0.8/1.1 MB | 683/703 kB | 0.5/7.6 MB | 553/609 kB
+Progress (4): 0.8/1.1 MB | 699/703 kB | 0.5/7.6 MB | 553/609 kB
+Progress (4): 0.8/1.1 MB | 699/703 kB | 0.5/7.6 MB | 569/609 kB
+Progress (4): 0.8/1.1 MB | 699/703 kB | 0.5/7.6 MB | 569/609 kB
+Progress (4): 0.8/1.1 MB | 703 kB | 0.5/7.6 MB | 569/609 kB    
+Progress (4): 0.8/1.1 MB | 703 kB | 0.5/7.6 MB | 569/609 kB
+Progress (4): 0.9/1.1 MB | 703 kB | 0.5/7.6 MB | 569/609 kB
+                                                           
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0.jar (703 kB at 1.3 MB/s)
+Progress (3): 0.9/1.1 MB | 0.5/7.6 MB | 585/609 kB
+Progress (3): 0.9/1.1 MB | 0.5/7.6 MB | 585/609 kB
+Progress (3): 0.9/1.1 MB | 0.5/7.6 MB | 585/609 kB
+Progress (3): 0.9/1.1 MB | 0.5/7.6 MB | 585/609 kB
+Progress (3): 0.9/1.1 MB | 0.5/7.6 MB | 585/609 kB
+Progress (3): 0.9/1.1 MB | 0.5/7.6 MB | 585/609 kB
+Progress (3): 0.9/1.1 MB | 0.6/7.6 MB | 585/609 kB
+Progress (3): 0.9/1.1 MB | 0.6/7.6 MB | 585/609 kB
+Progress (3): 0.9/1.1 MB | 0.6/7.6 MB | 585/609 kB
+Progress (3): 0.9/1.1 MB | 0.6/7.6 MB | 585/609 kB
+Progress (3): 0.9/1.1 MB | 0.6/7.6 MB | 585/609 kB
+Progress (3): 0.9/1.1 MB | 0.6/7.6 MB | 602/609 kB
+Progress (3): 0.9/1.1 MB | 0.6/7.6 MB | 609 kB    
+Progress (3): 0.9/1.1 MB | 0.6/7.6 MB | 609 kB
+Progress (3): 0.9/1.1 MB | 0.6/7.6 MB | 609 kB
+Progress (3): 1.0/1.1 MB | 0.6/7.6 MB | 609 kB
+Progress (3): 1.0/1.1 MB | 0.6/7.6 MB | 609 kB
+Progress (3): 1.0/1.1 MB | 0.6/7.6 MB | 609 kB
+Progress (3): 1.0/1.1 MB | 0.6/7.6 MB | 609 kB
+Progress (3): 1.0/1.1 MB | 0.7/7.6 MB | 609 kB
+                                              
+Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.22.0/commons-io-2.22.0.jar (609 kB at 1.0 MB/s)
+Progress (2): 1.0/1.1 MB | 0.7/7.6 MB
+Progress (2): 1.0/1.1 MB | 0.7/7.6 MB
+Progress (2): 1.0/1.1 MB | 0.7/7.6 MB
+Progress (2): 1.0/1.1 MB | 0.7/7.6 MB
+Progress (2): 1.0/1.1 MB | 0.7/7.6 MB
+Progress (2): 1.0/1.1 MB | 0.7/7.6 MB
+Progress (2): 1.0/1.1 MB | 0.7/7.6 MB
+Progress (2): 1.0/1.1 MB | 0.7/7.6 MB
+Progress (2): 1.0/1.1 MB | 0.8/7.6 MB
+Progress (2): 1.0/1.1 MB | 0.8/7.6 MB
+Progress (2): 1.0/1.1 MB | 0.8/7.6 MB
+Progress (2): 1.0/1.1 MB | 0.8/7.6 MB
+Progress (2): 1.0/1.1 MB | 0.8/7.6 MB
+Progress (2): 1.0/1.1 MB | 0.8/7.6 MB
+Progress (2): 1.0/1.1 MB | 0.8/7.6 MB
+Progress (2): 1.0/1.1 MB | 0.8/7.6 MB
+Progress (2): 1.0/1.1 MB | 0.9/7.6 MB
+Progress (2): 1.1/1.1 MB | 0.9/7.6 MB
+Progress (2): 1.1/1.1 MB | 0.9/7.6 MB
+Progress (2): 1.1/1.1 MB | 0.9/7.6 MB
+Progress (2): 1.1/1.1 MB | 0.9/7.6 MB
+Progress (2): 1.1 MB | 0.9/7.6 MB    
+Progress (2): 1.1 MB | 0.9/7.6 MB
+Progress (2): 1.1 MB | 0.9/7.6 MB
+Progress (2): 1.1 MB | 0.9/7.6 MB
+Progress (2): 1.1 MB | 0.9/7.6 MB
+                                 
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.28.0/commons-compress-1.28.0.jar (1.1 MB at 1.7 MB/s)
+Progress (1): 0.9/7.6 MB
+Progress (1): 0.9/7.6 MB
+Progress (1): 1.0/7.6 MB
+Progress (1): 1.0/7.6 MB
+Progress (1): 1.0/7.6 MB
+Progress (1): 1.0/7.6 MB
+Progress (1): 1.0/7.6 MB
+Progress (1): 1.0/7.6 MB
+Progress (1): 1.1/7.6 MB
+Progress (1): 1.1/7.6 MB
+Progress (1): 1.1/7.6 MB
+Progress (1): 1.1/7.6 MB
+Progress (1): 1.1/7.6 MB
+Progress (1): 1.1/7.6 MB
+Progress (1): 1.1/7.6 MB
+Progress (1): 1.2/7.6 MB
+Progress (1): 1.2/7.6 MB
+Progress (1): 1.2/7.6 MB
+Progress (1): 1.2/7.6 MB
+Progress (1): 1.2/7.6 MB
+Progress (1): 1.2/7.6 MB
+Progress (1): 1.3/7.6 MB
+Progress (1): 1.3/7.6 MB
+Progress (1): 1.3/7.6 MB
+Progress (1): 1.3/7.6 MB
+Progress (1): 1.3/7.6 MB
+Progress (1): 1.3/7.6 MB
+Progress (1): 1.4/7.6 MB
+Progress (1): 1.4/7.6 MB
+Progress (1): 1.4/7.6 MB
+Progress (1): 1.4/7.6 MB
+Progress (1): 1.4/7.6 MB
+Progress (1): 1.4/7.6 MB
+Progress (1): 1.5/7.6 MB
+Progress (1): 1.5/7.6 MB
+Progress (1): 1.5/7.6 MB
+Progress (1): 1.5/7.6 MB
+Progress (1): 1.5/7.6 MB
+Progress (1): 1.5/7.6 MB
+Progress (1): 1.6/7.6 MB
+Progress (1): 1.6/7.6 MB
+Progress (1): 1.6/7.6 MB
+Progress (1): 1.6/7.6 MB
+Progress (1): 1.6/7.6 MB
+Progress (1): 1.6/7.6 MB
+Progress (1): 1.6/7.6 MB
+Progress (1): 1.7/7.6 MB
+Progress (1): 1.7/7.6 MB
+Progress (1): 1.7/7.6 MB
+Progress (1): 1.7/7.6 MB
+Progress (1): 1.7/7.6 MB
+Progress (1): 1.7/7.6 MB
+Progress (1): 1.8/7.6 MB
+Progress (1): 1.8/7.6 MB
+Progress (1): 1.8/7.6 MB
+Progress (1): 1.8/7.6 MB
+Progress (1): 1.8/7.6 MB
+Progress (1): 1.8/7.6 MB
+Progress (1): 1.9/7.6 MB
+Progress (1): 1.9/7.6 MB
+Progress (1): 1.9/7.6 MB
+Progress (1): 1.9/7.6 MB
+Progress (1): 1.9/7.6 MB
+Progress (1): 1.9/7.6 MB
+Progress (1): 2.0/7.6 MB
+Progress (1): 2.0/7.6 MB
+Progress (1): 2.0/7.6 MB
+Progress (1): 2.0/7.6 MB
+Progress (1): 2.0/7.6 MB
+Progress (1): 2.0/7.6 MB
+Progress (1): 2.1/7.6 MB
+Progress (1): 2.1/7.6 MB
+Progress (1): 2.1/7.6 MB
+Progress (1): 2.1/7.6 MB
+Progress (1): 2.1/7.6 MB
+Progress (1): 2.1/7.6 MB
+Progress (1): 2.1/7.6 MB
+Progress (1): 2.2/7.6 MB
+Progress (1): 2.2/7.6 MB
+Progress (1): 2.2/7.6 MB
+Progress (1): 2.2/7.6 MB
+Progress (1): 2.2/7.6 MB
+Progress (1): 2.2/7.6 MB
+Progress (1): 2.2/7.6 MB
+Progress (1): 2.3/7.6 MB
+Progress (1): 2.3/7.6 MB
+Progress (1): 2.3/7.6 MB
+Progress (1): 2.3/7.6 MB
+Progress (1): 2.3/7.6 MB
+Progress (1): 2.3/7.6 MB
+Progress (1): 2.4/7.6 MB
+Progress (1): 2.4/7.6 MB
+Progress (1): 2.4/7.6 MB
+Progress (1): 2.4/7.6 MB
+Progress (1): 2.4/7.6 MB
+Progress (1): 2.4/7.6 MB
+Progress (1): 2.5/7.6 MB
+Progress (1): 2.5/7.6 MB
+Progress (1): 2.5/7.6 MB
+Progress (1): 2.5/7.6 MB
+Progress (1): 2.5/7.6 MB
+Progress (1): 2.5/7.6 MB
+Progress (1): 2.6/7.6 MB
+Progress (1): 2.6/7.6 MB
+Progress (1): 2.6/7.6 MB
+Progress (1): 2.6/7.6 MB
+Progress (1): 2.6/7.6 MB
+Progress (1): 2.6/7.6 MB
+Progress (1): 2.7/7.6 MB
+Progress (1): 2.7/7.6 MB
+Progress (1): 2.7/7.6 MB
+Progress (1): 2.7/7.6 MB
+Progress (1): 2.7/7.6 MB
+Progress (1): 2.7/7.6 MB
+Progress (1): 2.8/7.6 MB
+Progress (1): 2.8/7.6 MB
+Progress (1): 2.8/7.6 MB
+Progress (1): 2.8/7.6 MB
+Progress (1): 2.8/7.6 MB
+Progress (1): 2.8/7.6 MB
+Progress (1): 2.9/7.6 MB
+Progress (1): 2.9/7.6 MB
+Progress (1): 2.9/7.6 MB
+Progress (1): 2.9/7.6 MB
+Progress (1): 2.9/7.6 MB
+Progress (1): 2.9/7.6 MB
+Progress (1): 3.0/7.6 MB
+Progress (1): 3.0/7.6 MB
+Progress (1): 3.0/7.6 MB
+Progress (1): 3.0/7.6 MB
+Progress (1): 3.0/7.6 MB
+Progress (1): 3.0/7.6 MB
+Progress (1): 3.0/7.6 MB
+Progress (1): 3.1/7.6 MB
+Progress (1): 3.1/7.6 MB
+Progress (1): 3.1/7.6 MB
+Progress (1): 3.1/7.6 MB
+Progress (1): 3.1/7.6 MB
+Progress (1): 3.1/7.6 MB
+Progress (1): 3.2/7.6 MB
+Progress (1): 3.2/7.6 MB
+Progress (1): 3.2/7.6 MB
+Progress (1): 3.2/7.6 MB
+Progress (1): 3.2/7.6 MB
+Progress (1): 3.2/7.6 MB
+Progress (1): 3.3/7.6 MB
+Progress (1): 3.3/7.6 MB
+Progress (1): 3.3/7.6 MB
+Progress (1): 3.3/7.6 MB
+Progress (1): 3.3/7.6 MB
+Progress (1): 3.3/7.6 MB
+Progress (1): 3.4/7.6 MB
+Progress (1): 3.4/7.6 MB
+Progress (1): 3.4/7.6 MB
+Progress (1): 3.4/7.6 MB
+Progress (1): 3.4/7.6 MB
+Progress (1): 3.4/7.6 MB
+Progress (1): 3.4/7.6 MB
+Progress (1): 3.5/7.6 MB
+Progress (1): 3.5/7.6 MB
+Progress (1): 3.5/7.6 MB
+Progress (1): 3.5/7.6 MB
+Progress (1): 3.5/7.6 MB
+Progress (1): 3.5/7.6 MB
+Progress (1): 3.6/7.6 MB
+Progress (1): 3.6/7.6 MB
+Progress (1): 3.6/7.6 MB
+Progress (1): 3.6/7.6 MB
+Progress (1): 3.6/7.6 MB
+Progress (1): 3.6/7.6 MB
+Progress (1): 3.7/7.6 MB
+Progress (1): 3.7/7.6 MB
+Progress (1): 3.7/7.6 MB
+Progress (1): 3.7/7.6 MB
+Progress (1): 3.7/7.6 MB
+Progress (1): 3.7/7.6 MB
+Progress (1): 3.8/7.6 MB
+Progress (1): 3.8/7.6 MB
+Progress (1): 3.8/7.6 MB
+Progress (1): 3.8/7.6 MB
+Progress (1): 3.8/7.6 MB
+Progress (1): 3.8/7.6 MB
+Progress (1): 3.8/7.6 MB
+Progress (1): 3.9/7.6 MB
+Progress (1): 3.9/7.6 MB
+Progress (1): 3.9/7.6 MB
+Progress (1): 3.9/7.6 MB
+Progress (1): 3.9/7.6 MB
+Progress (1): 3.9/7.6 MB
+Progress (1): 4.0/7.6 MB
+Progress (1): 4.0/7.6 MB
+Progress (1): 4.0/7.6 MB
+Progress (1): 4.0/7.6 MB
+Progress (1): 4.0/7.6 MB
+Progress (1): 4.0/7.6 MB
+Progress (1): 4.0/7.6 MB
+Progress (1): 4.1/7.6 MB
+Progress (1): 4.1/7.6 MB
+Progress (1): 4.1/7.6 MB
+Progress (1): 4.1/7.6 MB
+Progress (1): 4.1/7.6 MB
+Progress (1): 4.1/7.6 MB
+Progress (1): 4.1/7.6 MB
+Progress (1): 4.2/7.6 MB
+Progress (1): 4.2/7.6 MB
+Progress (1): 4.2/7.6 MB
+Progress (1): 4.2/7.6 MB
+Progress (1): 4.2/7.6 MB
+Progress (1): 4.2/7.6 MB
+Progress (1): 4.3/7.6 MB
+Progress (1): 4.3/7.6 MB
+Progress (1): 4.3/7.6 MB
+Progress (1): 4.3/7.6 MB
+Progress (1): 4.3/7.6 MB
+Progress (1): 4.3/7.6 MB
+Progress (1): 4.4/7.6 MB
+Progress (1): 4.4/7.6 MB
+Progress (1): 4.4/7.6 MB
+Progress (1): 4.4/7.6 MB
+Progress (1): 4.4/7.6 MB
+Progress (1): 4.4/7.6 MB
+Progress (1): 4.5/7.6 MB
+Progress (1): 4.5/7.6 MB
+Progress (1): 4.5/7.6 MB
+Progress (1): 4.5/7.6 MB
+Progress (1): 4.5/7.6 MB
+Progress (1): 4.5/7.6 MB
+Progress (1): 4.5/7.6 MB
+Progress (1): 4.6/7.6 MB
+Progress (1): 4.6/7.6 MB
+Progress (1): 4.6/7.6 MB
+Progress (1): 4.6/7.6 MB
+Progress (1): 4.6/7.6 MB
+Progress (1): 4.6/7.6 MB
+Progress (1): 4.7/7.6 MB
+Progress (1): 4.7/7.6 MB
+Progress (1): 4.7/7.6 MB
+Progress (1): 4.7/7.6 MB
+Progress (1): 4.7/7.6 MB
+Progress (1): 4.7/7.6 MB
+Progress (1): 4.8/7.6 MB
+Progress (1): 4.8/7.6 MB
+Progress (1): 4.8/7.6 MB
+Progress (1): 4.8/7.6 MB
+Progress (1): 4.8/7.6 MB
+Progress (1): 4.8/7.6 MB
+Progress (1): 4.9/7.6 MB
+Progress (1): 4.9/7.6 MB
+Progress (1): 4.9/7.6 MB
+Progress (1): 4.9/7.6 MB
+Progress (1): 4.9/7.6 MB
+Progress (1): 4.9/7.6 MB
+Progress (1): 5.0/7.6 MB
+Progress (1): 5.0/7.6 MB
+Progress (1): 5.0/7.6 MB
+Progress (1): 5.0/7.6 MB
+Progress (1): 5.0/7.6 MB
+Progress (1): 5.0/7.6 MB
+Progress (1): 5.1/7.6 MB
+Progress (1): 5.1/7.6 MB
+Progress (1): 5.1/7.6 MB
+Progress (1): 5.1/7.6 MB
+Progress (1): 5.1/7.6 MB
+Progress (1): 5.1/7.6 MB
+Progress (1): 5.2/7.6 MB
+Progress (1): 5.2/7.6 MB
+Progress (1): 5.2/7.6 MB
+Progress (1): 5.2/7.6 MB
+Progress (1): 5.2/7.6 MB
+Progress (1): 5.2/7.6 MB
+Progress (1): 5.3/7.6 MB
+Progress (1): 5.3/7.6 MB
+Progress (1): 5.3/7.6 MB
+Progress (1): 5.3/7.6 MB
+Progress (1): 5.3/7.6 MB
+Progress (1): 5.3/7.6 MB
+Progress (1): 5.4/7.6 MB
+Progress (1): 5.4/7.6 MB
+Progress (1): 5.4/7.6 MB
+Progress (1): 5.4/7.6 MB
+Progress (1): 5.4/7.6 MB
+Progress (1): 5.4/7.6 MB
+Progress (1): 5.4/7.6 MB
+Progress (1): 5.5/7.6 MB
+Progress (1): 5.5/7.6 MB
+Progress (1): 5.5/7.6 MB
+Progress (1): 5.5/7.6 MB
+Progress (1): 5.5/7.6 MB
+Progress (1): 5.5/7.6 MB
+Progress (1): 5.6/7.6 MB
+Progress (1): 5.6/7.6 MB
+Progress (1): 5.6/7.6 MB
+Progress (1): 5.6/7.6 MB
+Progress (1): 5.6/7.6 MB
+Progress (1): 5.6/7.6 MB
+Progress (1): 5.7/7.6 MB
+Progress (1): 5.7/7.6 MB
+Progress (1): 5.7/7.6 MB
+Progress (1): 5.7/7.6 MB
+Progress (1): 5.7/7.6 MB
+Progress (1): 5.7/7.6 MB
+Progress (1): 5.8/7.6 MB
+Progress (1): 5.8/7.6 MB
+Progress (1): 5.8/7.6 MB
+Progress (1): 5.8/7.6 MB
+Progress (1): 5.8/7.6 MB
+Progress (1): 5.8/7.6 MB
+Progress (1): 5.9/7.6 MB
+Progress (1): 5.9/7.6 MB
+Progress (1): 5.9/7.6 MB
+Progress (1): 5.9/7.6 MB
+Progress (1): 5.9/7.6 MB
+Progress (1): 5.9/7.6 MB
+Progress (1): 6.0/7.6 MB
+Progress (1): 6.0/7.6 MB
+Progress (1): 6.0/7.6 MB
+Progress (1): 6.0/7.6 MB
+Progress (1): 6.0/7.6 MB
+Progress (1): 6.0/7.6 MB
+Progress (1): 6.1/7.6 MB
+Progress (1): 6.1/7.6 MB
+Progress (1): 6.1/7.6 MB
+Progress (1): 6.1/7.6 MB
+Progress (1): 6.1/7.6 MB
+Progress (1): 6.1/7.6 MB
+Progress (1): 6.1/7.6 MB
+Progress (1): 6.2/7.6 MB
+Progress (1): 6.2/7.6 MB
+Progress (1): 6.2/7.6 MB
+Progress (1): 6.2/7.6 MB
+Progress (1): 6.2/7.6 MB
+Progress (1): 6.2/7.6 MB
+Progress (1): 6.2/7.6 MB
+Progress (1): 6.3/7.6 MB
+Progress (1): 6.3/7.6 MB
+Progress (1): 6.3/7.6 MB
+Progress (1): 6.3/7.6 MB
+Progress (1): 6.3/7.6 MB
+Progress (1): 6.3/7.6 MB
+Progress (1): 6.4/7.6 MB
+Progress (1): 6.4/7.6 MB
+Progress (1): 6.4/7.6 MB
+Progress (1): 6.4/7.6 MB
+Progress (1): 6.4/7.6 MB
+Progress (1): 6.4/7.6 MB
+Progress (1): 6.5/7.6 MB
+Progress (1): 6.5/7.6 MB
+Progress (1): 6.5/7.6 MB
+Progress (1): 6.5/7.6 MB
+Progress (1): 6.5/7.6 MB
+Progress (1): 6.5/7.6 MB
+Progress (1): 6.6/7.6 MB
+Progress (1): 6.6/7.6 MB
+Progress (1): 6.6/7.6 MB
+Progress (1): 6.6/7.6 MB
+Progress (1): 6.6/7.6 MB
+Progress (1): 6.6/7.6 MB
+Progress (1): 6.6/7.6 MB
+Progress (1): 6.7/7.6 MB
+Progress (1): 6.7/7.6 MB
+Progress (1): 6.7/7.6 MB
+Progress (1): 6.7/7.6 MB
+Progress (1): 6.7/7.6 MB
+Progress (1): 6.7/7.6 MB
+Progress (1): 6.8/7.6 MB
+Progress (1): 6.8/7.6 MB
+Progress (1): 6.8/7.6 MB
+Progress (1): 6.8/7.6 MB
+Progress (1): 6.8/7.6 MB
+Progress (1): 6.8/7.6 MB
+Progress (1): 6.9/7.6 MB
+Progress (1): 6.9/7.6 MB
+Progress (1): 6.9/7.6 MB
+Progress (1): 6.9/7.6 MB
+Progress (1): 6.9/7.6 MB
+Progress (1): 6.9/7.6 MB
+Progress (1): 7.0/7.6 MB
+Progress (1): 7.0/7.6 MB
+Progress (1): 7.0/7.6 MB
+Progress (1): 7.0/7.6 MB
+Progress (1): 7.0/7.6 MB
+Progress (1): 7.0/7.6 MB
+Progress (1): 7.1/7.6 MB
+Progress (1): 7.1/7.6 MB
+Progress (1): 7.1/7.6 MB
+Progress (1): 7.1/7.6 MB
+Progress (1): 7.1/7.6 MB
+Progress (1): 7.1/7.6 MB
+Progress (1): 7.2/7.6 MB
+Progress (1): 7.2/7.6 MB
+Progress (1): 7.2/7.6 MB
+Progress (1): 7.2/7.6 MB
+Progress (1): 7.2/7.6 MB
+Progress (1): 7.2/7.6 MB
+Progress (1): 7.3/7.6 MB
+Progress (1): 7.3/7.6 MB
+Progress (1): 7.3/7.6 MB
+Progress (1): 7.3/7.6 MB
+Progress (1): 7.3/7.6 MB
+Progress (1): 7.3/7.6 MB
+Progress (1): 7.4/7.6 MB
+Progress (1): 7.4/7.6 MB
+Progress (1): 7.4/7.6 MB
+Progress (1): 7.4/7.6 MB
+Progress (1): 7.4/7.6 MB
+Progress (1): 7.4/7.6 MB
+Progress (1): 7.5/7.6 MB
+Progress (1): 7.5/7.6 MB
+Progress (1): 7.5/7.6 MB
+Progress (1): 7.5/7.6 MB
+Progress (1): 7.5/7.6 MB
+Progress (1): 7.5/7.6 MB
+Progress (1): 7.5/7.6 MB
+Progress (1): 7.6/7.6 MB
+Progress (1): 7.6 MB    
+                    
+Downloaded from central: https://repo.maven.apache.org/maven2/com/github/luben/zstd-jni/1.5.7-9/zstd-jni-1.5.7-9.jar (7.6 MB at 5.7 MB/s)
+[INFO] Building jar: C:\dev\Capstone_project\target\Capstone_project-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot:4.1.1:repackage (repackage) @ Capstone_project ---
+[INFO] Replacing main artifact C:\dev\Capstone_project\target\Capstone_project-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to C:\dev\Capstone_project\target\Capstone_project-0.0.1-SNAPSHOT.jar.original
+[INFO] 
+[INFO] --- jacoco:0.8.15:check (check) @ Capstone_project ---
+[INFO] Loading execution data file C:\dev\Capstone_project\target\jacoco.exec
+[INFO] Analyzed bundle 'Capstone_project' with 50 classes
+[INFO] All coverage checks have been met.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  26.792 s
+[INFO] Finished at: 2026-10-06T15:53:49-04:00
+[INFO] ------------------------------------------------------------------------
