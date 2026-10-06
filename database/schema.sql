@@ -182,3 +182,12 @@ CREATE TABLE exhibition_artifacts (
 ) ENGINE = InnoDB;
 
 CREATE INDEX ix_exhibition_artifacts_artifact ON exhibition_artifacts (artifact_id);
+-- ---------------------------------------------------------------------------
+-- Performance indexes.
+-- Foreign keys and UNIQUE constraints are indexed by InnoDB automatically, so
+-- only non-key filter columns are listed here.
+-- ---------------------------------------------------------------------------
+CREATE INDEX idx_artifacts_status           ON artifacts (status);
+CREATE INDEX idx_artifacts_collection_status ON artifacts (collection_id, status);
+CREATE INDEX idx_restoration_jobs_status    ON restoration_jobs (status);
+CREATE INDEX idx_exhibitions_date_range     ON exhibitions (start_date, end_date);
