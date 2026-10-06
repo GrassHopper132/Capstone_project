@@ -1,0 +1,110 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< org.peopleshores:Capstone_project >------------------
+[INFO] Building Museum Artifact Manager 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ Capstone_project ---
+[INFO] Deleting C:\dev\Capstone_project\target
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ Capstone_project ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ Capstone_project ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 56 source files with javac [debug parameters release 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ Capstone_project ---
+[INFO] Copying 1 resource from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ Capstone_project ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 2 source files with javac [debug parameters release 17] to target\test-classes
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ Capstone_project ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.peopleshores.capstone_project.CapstoneProjectApplicationTests
+14:16:04.767 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [org.peopleshores.capstone_project.CapstoneProjectApplicationTests]: CapstoneProjectApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:16:04.923 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration org.peopleshores.capstone_project.CapstoneProjectApplication for test class org.peopleshores.capstone_project.CapstoneProjectApplicationTests
+14:16:05.062 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [org.peopleshores.capstone_project.CapstoneProjectApplicationTests]: CapstoneProjectApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:16:05.066 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration org.peopleshores.capstone_project.CapstoneProjectApplication for test class org.peopleshores.capstone_project.CapstoneProjectApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-10-06T14:16:05.597-04:00  INFO 964 --- [           main] o.p.c.CapstoneProjectApplicationTests    : Starting CapstoneProjectApplicationTests using Java 26.0.2 with PID 964 (started by carlos.rhymer in C:\dev\Capstone_project)
+2026-10-06T14:16:05.600-04:00  INFO 964 --- [           main] o.p.c.CapstoneProjectApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2026-10-06T14:16:06.907-04:00  INFO 964 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-06T14:16:07.104-04:00  INFO 964 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 175 ms. Found 9 JPA repository interfaces.
+2026-10-06T14:16:08.198-04:00  INFO 964 --- [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-06T14:16:08.304-04:00  INFO 964 --- [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-10-06T14:16:09.319-04:00  INFO 964 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-06T14:16:09.379-04:00  INFO 964 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-06T14:16:09.765-04:00  INFO 964 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-10-06T14:16:09.771-04:00  INFO 964 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-06T14:16:09.826-04:00  WARN 964 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-10-06T14:16:09.899-04:00  INFO 964 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:h2:mem:testdb]
+	Database driver: H2 JDBC Driver
+	Database dialect: H2Dialect
+	Database version: 2.4.240
+	Default catalog/schema: TESTDB/PUBLIC
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 100
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-06T14:16:12.427-04:00  INFO 964 --- [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-06T14:16:12.610-04:00  INFO 964 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-06T14:16:12.796-04:00  INFO 964 --- [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-06T14:16:15.121-04:00  INFO 964 --- [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name appUserDetailsService
+2026-10-06T14:16:16.352-04:00  INFO 964 --- [           main] o.p.c.CapstoneProjectApplicationTests    : Started CapstoneProjectApplicationTests in 11.165 seconds (process running for 12.914)
+2026-10-06T14:16:16.359-04:00  WARN 964 --- [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-06T14:16:16.360-04:00  WARN 964 --- [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+.\mvnw.cmd : Mockito is currently self-attaching to enable the inline-mock-maker. This will no 
+longer work in future releases of the JDK. Please add Mockito as an agent to your build as described 
+in Mockito's documentation: 
+https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+At line:1 char:1
++ .\mvnw.cmd clean test 2>&1 | Out-File test.log -Encoding UTF8
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Mockito is curr...ockito.html#0.3:String) [], RemoteExc 
+   eption
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because 
+bootstrap classpath has been appended
+WARNING: A Java agent has been loaded dynamically (C:\Users\carlos.rhymer\.m2\repository\net\bytebudd
+y\byte-buddy-agent\1.18.11\byte-buddy-agent-1.18.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide 
+this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for 
+more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.74 s -- in org.peopleshores.capstone_project.CapstoneProjectApplicationTests
+[INFO] Running ArtifactService
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.733 s -- in ArtifactService
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  23.225 s
+[INFO] Finished at: 2026-10-06T14:16:18-04:00
+[INFO] ------------------------------------------------------------------------

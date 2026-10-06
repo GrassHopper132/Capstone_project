@@ -122,6 +122,7 @@ public class ArtifactService {
         artifact.setMaterial(request.material());
         artifact.setDescription(request.description());
         artifact.setAcquiredOn(request.acquiredOn());
+        artifact.setImageUrl(request.imageUrl());
         artifact.setCollection(collection);
         artifact.setLocation(location);
     }

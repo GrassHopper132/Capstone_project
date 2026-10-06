@@ -18,7 +18,8 @@ public record ArtifactResponse(
         Long collectionId,
         String collectionName,
         Long locationId,
-        String locationLabel
+        String locationLabel,
+        String imageUrl
 ) {
 
     public static ArtifactResponse from(Artifact a) {
@@ -35,7 +36,8 @@ public record ArtifactResponse(
                 a.getCollection() == null ? null : a.getCollection().getId(),
                 a.getCollection() == null ? null : a.getCollection().getName(),
                 a.getLocation() == null ? null : a.getLocation().getId(),
-                a.getLocation() == null ? null : a.getLocation().getLabel()
+                a.getLocation() == null ? null : a.getLocation().getLabel(),
+                a.getImageUrl()
         );
     }
 }

@@ -199,4 +199,16 @@ public class Artifact extends Auditable {
     public void setExhibitionEntries(List<ExhibitionArtifact> exhibitionEntries) {
         this.exhibitionEntries = exhibitionEntries;
     }
+
+    /** Optional link to a photograph of the object. Shown on the public pages. */
+    @Column(name = "image_url", length = 500)
+    private String imageUrl;
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 }

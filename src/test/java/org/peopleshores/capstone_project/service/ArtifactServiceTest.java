@@ -55,7 +55,7 @@ class ArtifactServiceTest {
 
         request = new ArtifactRequest(
                 "1994.22.7", "Red-figure amphora", "Attic Greek", "c. 480 BCE",
-                "Terracotta", "Storage jar", 1L, 12L, LocalDate.of(1994, 6, 14));
+                "Terracotta", "Storage jar", 1L, 12L, LocalDate.of(1994, 6, 14), null);
     }
 
     @Test

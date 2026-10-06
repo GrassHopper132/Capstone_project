@@ -12,6 +12,7 @@ export default function Layout() {
   const nav = [
     { to: "/", label: "Dashboard", end: true, show: true },
     { to: "/artifacts", label: "Artifacts", show: true },
+    { to: "/exhibitions", label: "Exhibitions", show: true },
     { to: "/artifacts/new", label: "Accession", show: canAccession },
   ].filter((item) => item.show);
 

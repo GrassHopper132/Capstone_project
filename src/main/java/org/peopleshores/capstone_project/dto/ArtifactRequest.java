@@ -30,6 +30,8 @@ public record ArtifactRequest(
 
         @NotNull Long locationId,
 
-        @PastOrPresent LocalDate acquiredOn
+        @PastOrPresent LocalDate acquiredOn,
+
+        @Size(max = 500) String imageUrl
 ) {
 }

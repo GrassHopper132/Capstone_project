@@ -191,3 +191,10 @@ CREATE INDEX idx_artifacts_status           ON artifacts (status);
 CREATE INDEX idx_artifacts_collection_status ON artifacts (collection_id, status);
 CREATE INDEX idx_restoration_jobs_status    ON restoration_jobs (status);
 CREATE INDEX idx_exhibitions_date_range     ON exhibitions (start_date, end_date);
+
+-- ---------------------------------------------------------------------------
+-- Artifact imagery. Stores a URL rather than bytes: the museum's own assets
+-- would live on a CDN in production, and for this build the seed data points
+-- at the Met's Open Access collection.
+-- ---------------------------------------------------------------------------
+ALTER TABLE artifacts ADD COLUMN image_url VARCHAR(500) NULL;

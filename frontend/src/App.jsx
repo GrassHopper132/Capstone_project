@@ -6,6 +6,8 @@ import Dashboard from "./pages/Dashboard";
 import ArtifactList from "./pages/ArtifactList";
 import ArtifactDetail from "./pages/ArtifactDetail";
 import ArtifactNew from "./pages/ArtifactNew";
+import ExhibitionList from "./pages/ExhibitionList";
+import ExhibitionDetail from "./pages/ExhibitionDetail";
 import NotFound from "./pages/NotFound";
 
 export default function App() {
@@ -25,6 +27,8 @@ export default function App() {
           }
         />
         <Route path="artifacts/:id" element={<ArtifactDetail />} />
+        <Route path="exhibitions" element={<ExhibitionList />} />
+        <Route path="exhibitions/:id" element={<ExhibitionDetail />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
