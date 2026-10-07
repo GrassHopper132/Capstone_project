@@ -92,9 +92,9 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * DEVELOPMENT ONLY: reports the root cause in the response body.
-     * Replace the message with a generic string before submission so the API
-     * does not leak internals.
+     * The catch-all. The full root cause goes to the log, where operators can
+     * read it; the caller gets a deliberately uninformative message, because
+     * exception class names and internal messages are reconnaissance.
      */
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleUnexpected(Exception ex, WebRequest request) {
@@ -105,7 +105,9 @@ public class GlobalExceptionHandler {
             root = root.getCause();
         }
 
-        String detail = root.getClass().getName() + ": " + root.getMessage();
+        log.error("Root cause on {}: {}: {}", pathOf(request), root.getClass().getName(), root.getMessage());
+
+        String detail = "The request could not be completed. The error has been logged.";
 
         ErrorResponse body = new ErrorResponse(
                 HttpStatus.INTERNAL_SERVER_ERROR.value(), "Internal Server Error",

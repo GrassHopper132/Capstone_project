@@ -35,3 +35,9 @@ _replaced/
 all-java.txt
 setup-backend.ps1
 target/
+
+### Build logs ###
+*.log
+
+### Build logs ###
+*.log
