@@ -64,7 +64,18 @@ Starts on port 5173.
 |---|---|---|
 | los@museum.org | Password123! | ADMIN |
 
-Registering through the UI or POST /api/v1/auth/register always creates a
+The seed data ships four staff accounts whose passwords are not in the
+repository, so create your own demo administrator in two steps:
+
+    # 1. register - this returns VISITOR whatever role you ask for
+    $body = @{ email='los@museum.org'; password='Password123!'; fullName='Carlos Rhymer' } | ConvertTo-Json
+    Invoke-RestMethod -Uri "http://localhost:8080/api/v1/auth/register" -Method Post -Body $body -ContentType "application/json"
+
+    # 2. promote it
+    mysql -u root -p museum_db -e "UPDATE users SET role_id = (SELECT id FROM roles WHERE name='ADMIN') WHERE email='los@museum.org';"
+
+Two steps rather than one is the point. Registering through the UI or
+POST /api/v1/auth/register always creates a
 VISITOR, whatever role the request asks for. Staff accounts are promoted by an
 administrator, not self-assigned.
 
