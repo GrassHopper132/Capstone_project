@@ -1,0 +1,19 @@
+meta {
+  name: 20 Strike the show from the record
+  type: http
+  seq: 20
+}
+
+delete {
+  url: {{baseUrl}}/api/v1/exhibitions/{{createdExhibitionId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+assert {
+  res.status: eq 204
+}

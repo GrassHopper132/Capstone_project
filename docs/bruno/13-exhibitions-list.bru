@@ -1,17 +1,17 @@
 meta {
-  name: 10 List locations
+  name: 13 List the programme
   type: http
-  seq: 10
+  seq: 13
 }
 
 get {
-  url: {{baseUrl}}/api/v1/locations
+  url: {{baseUrl}}/api/v1/exhibitions
   body: none
   auth: bearer
 }
 
 auth:bearer {
-  token: {{token}}
+  token: {{adminToken}}
 }
 
 assert {

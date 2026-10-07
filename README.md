@@ -15,7 +15,7 @@ Built for UCI 2123, Systems Engineering with AWS.
 | Database | MySQL 8 |
 | Auth | JWT (jjwt 0.12.6), BCrypt strength 10 |
 | Tests | JUnit 5, Mockito, AssertJ, H2 in-memory |
-| Coverage | JaCoCo 0.8.15, enforced at 70% |
+| Coverage | JaCoCo 0.8.15, enforced at 75% |
 | API docs | springdoc-openapi 3.1.1 |
 | Build | Maven wrapper, JDK 26 |
 
@@ -99,7 +99,7 @@ has it, in which case it stays on display because it is still hanging on a wall.
 
     ./mvnw.cmd clean verify
 
-101 tests. The build fails below 70% instruction coverage; the JaCoCo report
+115 tests, 77% instruction coverage. The build fails below 75%; the JaCoCo report
 lands at target/site/jacoco/index.html.
 
 Tests run against in-memory H2 and need no MySQL.

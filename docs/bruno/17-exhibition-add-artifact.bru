@@ -1,0 +1,30 @@
+meta {
+  name: 17 Put an object into the show
+  type: http
+  seq: 17
+}
+
+post {
+  url: {{baseUrl}}/api/v1/exhibitions/{{createdExhibitionId}}/artifacts
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "artifactId": 1
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body.artifacts[0].status: eq ON_DISPLAY
+}

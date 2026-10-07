@@ -1,17 +1,17 @@
 meta {
-  name: 05 Get artifact by id
+  name: 05 One collection
   type: http
   seq: 5
 }
 
 get {
-  url: {{baseUrl}}/api/v1/artifacts/1
+  url: {{baseUrl}}/api/v1/collections/1
   body: none
   auth: bearer
 }
 
 auth:bearer {
-  token: {{token}}
+  token: {{adminToken}}
 }
 
 assert {

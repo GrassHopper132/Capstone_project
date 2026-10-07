@@ -1,7 +1,7 @@
 meta {
-  name: 14 Validation error is 400
+  name: 30 Empty required fields is 400
   type: http
-  seq: 14
+  seq: 30
 }
 
 post {
@@ -11,7 +11,7 @@ post {
 }
 
 auth:bearer {
-  token: {{token}}
+  token: {{adminToken}}
 }
 
 headers {
@@ -22,7 +22,6 @@ body:json {
   {
     "accessionNumber": "",
     "title": "",
-    "status": "STORED",
     "collectionId": 1,
     "locationId": 1
   }

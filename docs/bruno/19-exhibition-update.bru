@@ -1,0 +1,33 @@
+meta {
+  name: 19 Change the run dates
+  type: http
+  seq: 19
+}
+
+put {
+  url: {{baseUrl}}/api/v1/exhibitions/{{createdExhibitionId}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "title": "Bruno Verification Show",
+    "gallery": "Gallery 9",
+    "startDate": "2027-06-01",
+    "endDate": "2027-12-31"
+  }
+}
+
+assert {
+  res.status: eq 200
+  res.body.phase: eq UPCOMING
+}

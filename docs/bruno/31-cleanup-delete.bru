@@ -1,0 +1,19 @@
+meta {
+  name: 31 Deaccession the test artifact
+  type: http
+  seq: 31
+}
+
+delete {
+  url: {{baseUrl}}/api/v1/artifacts/{{createdArtifactId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+assert {
+  res.status: eq 204
+}

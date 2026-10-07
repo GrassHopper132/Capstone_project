@@ -1,0 +1,19 @@
+meta {
+  name: 07 List artifacts
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{baseUrl}}/api/v1/artifacts?page=0&size=20
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+assert {
+  res.status: eq 200
+}

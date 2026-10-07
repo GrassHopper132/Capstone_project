@@ -1,7 +1,7 @@
 meta {
-  name: 13 Duplicate accession is 409
+  name: 29 Duplicate accession number is 409
   type: http
-  seq: 13
+  seq: 29
 }
 
 post {
@@ -11,7 +11,7 @@ post {
 }
 
 auth:bearer {
-  token: {{token}}
+  token: {{adminToken}}
 }
 
 headers {
@@ -22,10 +22,8 @@ body:json {
   {
     "accessionNumber": "1994.22.7",
     "title": "Duplicate accession probe",
-    "description": "Should be rejected by FR-5.",
-    "origin": "Unknown",
-    "status": "STORED",
-    "conditionGrade": "GOOD",
+    "material": "Terracotta",
+    "description": "Should be refused by the uniqueness rule.",
     "collectionId": 1,
     "locationId": 1
   }

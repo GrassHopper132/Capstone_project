@@ -1,7 +1,7 @@
 meta {
-  name: 04 List filtered
+  name: 08 Filter by status and text
   type: http
-  seq: 4
+  seq: 8
 }
 
 get {
@@ -10,13 +10,8 @@ get {
   auth: bearer
 }
 
-params:query {
-  status: ON_DISPLAY
-  search: amphora
-}
-
 auth:bearer {
-  token: {{token}}
+  token: {{adminToken}}
 }
 
 assert {

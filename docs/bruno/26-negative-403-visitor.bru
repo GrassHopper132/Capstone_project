@@ -1,0 +1,19 @@
+meta {
+  name: 26 Visitor on the staff catalogue is 403
+  type: http
+  seq: 26
+}
+
+get {
+  url: {{baseUrl}}/api/v1/artifacts
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{visitorToken}}
+}
+
+assert {
+  res.status: eq 403
+}

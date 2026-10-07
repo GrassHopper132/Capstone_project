@@ -1,0 +1,33 @@
+meta {
+  name: 02 Register a visitor asking for ADMIN
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api/v1/auth/register
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "email": "{{visitorEmail}}",
+    "password": "{{visitorPassword}}",
+    "fullName": "Bruno Visitor",
+    "role": "ADMIN"
+  }
+}
+
+vars:post-response {
+  visitorToken: res.body.token
+}
+
+assert {
+  res.status: lt 400
+  res.body.role: eq VISITOR
+}

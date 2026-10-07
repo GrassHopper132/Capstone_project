@@ -1,0 +1,19 @@
+meta {
+  name: 23 Visitor archive, signed in
+  type: http
+  seq: 23
+}
+
+get {
+  url: {{baseUrl}}/api/v1/visitor/exhibitions
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{visitorToken}}
+}
+
+assert {
+  res.status: eq 200
+}

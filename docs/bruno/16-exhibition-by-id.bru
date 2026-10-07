@@ -1,0 +1,19 @@
+meta {
+  name: 16 One exhibition with its objects
+  type: http
+  seq: 16
+}
+
+get {
+  url: {{baseUrl}}/api/v1/exhibitions/{{createdExhibitionId}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+assert {
+  res.status: eq 200
+}

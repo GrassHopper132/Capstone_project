@@ -1,0 +1,42 @@
+meta {
+  name: 10 Accession an artifact
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{baseUrl}}/api/v1/artifacts
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "accessionNumber": "2026.9.1",
+    "title": "Bruno test vessel",
+    "originCulture": "Unknown",
+    "datePeriod": "Undated",
+    "material": "Terracotta",
+    "description": "Created by the Bruno collection during route verification.",
+    "collectionId": 1,
+    "locationId": 1,
+    "acquiredOn": "2026-01-15"
+  }
+}
+
+vars:post-response {
+  createdArtifactId: res.body.id
+}
+
+assert {
+  res.status: eq 201
+  res.body.status: eq STORED
+}

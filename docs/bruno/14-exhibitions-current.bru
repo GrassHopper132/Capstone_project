@@ -1,0 +1,19 @@
+meta {
+  name: 14 What is on today
+  type: http
+  seq: 14
+}
+
+get {
+  url: {{baseUrl}}/api/v1/exhibitions/current
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+assert {
+  res.status: eq 200
+}

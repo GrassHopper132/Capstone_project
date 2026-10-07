@@ -1,0 +1,20 @@
+meta {
+  name: 12 Send it to the workshop
+  type: http
+  seq: 12
+}
+
+patch {
+  url: {{baseUrl}}/api/v1/artifacts/{{createdArtifactId}}/status?status=IN_RESTORATION
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{adminToken}}
+}
+
+assert {
+  res.status: eq 200
+  res.body.status: eq IN_RESTORATION
+}
