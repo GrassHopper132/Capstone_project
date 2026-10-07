@@ -31,6 +31,11 @@ export function AuthProvider({ children }) {
     return adopt(await authApi.login(email, password));
   }, [adopt]);
 
+  /** Registration returns the same payload as login, so the new account is signed in straight away. */
+  const signUp = useCallback(async (payload) => {
+    return adopt(await authApi.register(payload));
+  }, [adopt]);
+
   const signOut = useCallback(() => {
     tokenStore.clear();
     localStorage.removeItem(USER_KEY);
@@ -39,8 +44,8 @@ export function AuthProvider({ children }) {
   }, []);
 
   const value = useMemo(
-    () => ({ user, token, signIn, signOut, isAuthenticated: Boolean(token) }),
-    [user, token, signIn, signOut]
+    () => ({ user, token, signIn, signUp, signOut, isAuthenticated: Boolean(token) }),
+    [user, token, signIn, signUp, signOut]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

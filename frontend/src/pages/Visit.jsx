@@ -126,7 +126,7 @@ export default function Visit() {
               announced but not yet installed.
             </p>
             <p>
-              <Link to="/login">Sign in or create an account</Link>
+              <Link to="/register">Create an account</Link> or <Link to="/login">sign in</Link>
             </p>
           </div>
         </footer>
