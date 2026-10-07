@@ -158,7 +158,7 @@ class ArtifactServiceSearchTest {
     @DisplayName("moves an artifact into the workshop")
     void changeStatusSavesNewState() {
         Artifact a = amphora();
-        when(artifactRepository.findById(1L)).thenReturn(Optional.of(a));
+        when(artifactRepository.findDetailById(1L)).thenReturn(Optional.of(a));
         when(artifactRepository.save(a)).thenReturn(a);
 
         assertThat(service.changeStatus(1L, ArtifactStatus.IN_RESTORATION).getStatus())

@@ -27,6 +27,10 @@ vars:post-response {
   visitorToken: res.body.token
 }
 
+script:pre-request {
+  bru.setVar("visitorEmail", "bruno-visitor-" + Date.now() + "@example.com");
+}
+
 assert {
   res.status: lt 400
   res.body.role: eq VISITOR

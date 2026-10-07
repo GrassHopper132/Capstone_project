@@ -101,9 +101,13 @@ public class ArtifactService {
         artifactRepository.delete(artifact);
     }
 
+    /**
+     * Fetches with its relationships because the controller maps the result to a
+     * response DTO after this transaction closes, and open-in-view is disabled.
+     */
     @Transactional
     public Artifact changeStatus(Long id, ArtifactStatus status) {
-        Artifact artifact = artifactRepository.findById(id)
+        Artifact artifact = artifactRepository.findDetailById(id)
                 .orElseThrow(() -> ResourceNotFoundException.of("Artifact", id));
         artifact.setStatus(status);
         return artifactRepository.save(artifact);
