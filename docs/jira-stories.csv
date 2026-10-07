@@ -1,13 +1,29 @@
-Summary,Description,Issue Type,Priority
-Admin creates and deactivates staff accounts,Deactivated user cannot obtain a JWT,Story,High
-Admin assigns a role to a user,Role change takes effect on next login,Story,Medium
-Admin sees every artifact across all collections,List returns artifacts regardless of curator,Story,Medium
-Admin reviews an artifact's change history,History shows who changed what and when,Story,Low
-Curator accessions a new artifact with a unique number,Duplicate accession number is rejected with 409,Story,High
-Curator assigns an artifact to a collection and storage location,Artifact detail shows both and location is required,Story,High
-Curator builds an exhibition from artifacts across collections,An artifact can belong to several exhibitions,Story,Medium
-Curator filters artifacts by status material and date range,Filtered list is paginated 20 per page,Story,High
-Restorer sees a queue of artifacts flagged for restoration,Queue shows only OPEN and IN_PROGRESS jobs,Story,Medium
-Restorer logs a condition report with a grade and notes,Report is timestamped and attributed to the inspector,Story,Medium
-Restorer opens updates and closes a restoration job,Closing a job sets artifact status back to STORED,Story,Medium
-Any user logs in and sees only what their role permits,Restorer gets 403 on artifact delete,Story,High
+Summary,Description
+Design the database schema,"[Done] Create the nine tables with primary keys, foreign keys, NOT NULL and UNIQUE constraints, and check constraints on every enumerated column. schema.sql is the single source of truth; Hibernate validates the entities against it at startup."
+Index the columns the application filters on,"[Done] Add indexes on artifact status, the collection and status pair, restoration job status, and the exhibition date range. Foreign keys and unique constraints are indexed by InnoDB already, so only non-key filter columns need them."
+Load reference data and a sample collection,"[Done] Seed the roles, collections, locations and fifteen artifacts so the application can be demonstrated from a clean database with one command."
+Model the collection as JPA entities,"[Done] Twelve entities covering artifacts, collections, locations, users, roles, exhibitions, condition reports and restoration jobs, with validation annotations and explicit fetch strategies."
+Join exhibitions to artifacts with a display order,"[Done] The join carries a display_order column, so it is modelled as its own entity with a composite key rather than a plain many-to-many."
+Build repositories with custom queries and pagination,"[Done] Nine Spring Data repositories, eleven custom queries, pageable list endpoints, and entity graphs to avoid N+1 selects with open-in-view disabled."
+Search the catalogue by several filters at once,"[Done] Compose status, material, collection and free-text filters into one query using JPA specifications, so an absent filter contributes nothing rather than breaking the query."
+Enforce the artifact lifecycle rules,[Done] Accession numbers are unique and immutable. An artifact on an active exhibition cannot be deaccessioned.
+Expose the artifact REST API,"[Done] Six endpoints with appropriate status codes, request validation, and a Location header on creation."
+Return consistent JSON errors from one place,"[Done] A single controller advice maps every exception to a documented error body. Unhandled exceptions are logged in full and answered with a generic message, so internals are never reported to callers."
+Authenticate staff with JWT,"[Done] Stateless bearer tokens signed with HS384, thirty minute expiry, BCrypt password hashing at strength ten. Forged and expired tokens are rejected quietly."
+Restrict every action by role,"[Done] Read is open to all staff. Writing is limited to administrators and curators, status changes include restorers, and deaccession is administrators only. A curator attempting a deaccession receives 403."
+Stop callers assigning themselves a role at registration,[Done] Self-registration always creates the least privileged account whatever the request asks for. Promotion is an administrative action.
+Build the staff application,"[Done] React single page application with routing, protected routes, authentication context, artifact list, detail and accession form."
+Schedule exhibitions,"[Done] Create, edit and delete exhibitions with opening and closing dates. A show that is open to the public today cannot be deleted."
+Rotate objects on and off display by season,"[Done] An exhibition is a date range, so its phase is computed from the calendar rather than stored. Adding an object to a show that is open today puts it on display; removing it returns it to storage unless another open show still has it."
+Manage exhibitions from the interface,"[Done] Exhibition list with phase, detail page showing objects in display order, and controls to add and remove objects."
+Publish what is on show to the public,[Done] Unauthenticated endpoints exposing only exhibitions open today and only the fields a visitor would see on a wall label.
+Give registered visitors the exhibition archive,"[Done] A visitor account opens the full programme, past and announced, which anonymous visitors cannot see. Without this the account would grant nothing."
+Build the visitor-facing gallery page,"[Done] A public page showing today's exhibitions with photographs of the objects, opening hours, and a directions link."
+Show photographs of objects,[Done] Store an image URL on each artifact and seed the collection with open-access photographs for demonstration.
+Document the API,"[Done] Live OpenAPI documentation at /swagger-ui.html, reachable without a token so it can be browsed before signing in."
+Reach seventy percent test coverage,"[Done] 101 tests across the service, controller, security, DTO and exception layers. The build fails below seventy percent instruction coverage."
+Write the project README,"[Done] Run instructions, demo credentials, the role matrix, design decisions and an honest statement of what is not built."
+Verify every endpoint against a request collection,"[In Progress] Keep an API client collection covering authentication, the catalogue, exhibitions and both public tiers, including the negative cases for 401, 403, 404 and 409."
+Let visitors register from the web interface,"[To Do] Registration works over the API but has no form. The public page points visitors at the sign-in screen, which only signs in."
+Record condition reports for objects,"[To Do] Restorers need to file a condition report against an artifact. The entity and repository exist; the service, endpoints and screens do not."
+Track restoration jobs through the workshop,"[To Do] Open a job against an artifact, move it through its states, and close it with an updated condition grade. The entity and repository exist; nothing above them does."
