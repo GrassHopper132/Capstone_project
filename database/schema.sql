@@ -1,4 +1,10 @@
 -- =====================================================================
+-- WARNING: THIS SCRIPT DESTROYS DATA.
+-- The first statement drops the entire museum_db database. Running it
+-- from a SQL editor wipes every user, artifact and exhibition.
+-- Run it only when building the database from scratch.
+-- =====================================================================
+-- =====================================================================
 -- Museum Artifact Manager - schema
 -- MySQL 8.0
 -- Run:  mysql -u root -p < database/schema.sql
