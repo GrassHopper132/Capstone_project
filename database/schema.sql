@@ -87,6 +87,7 @@ CREATE TABLE artifacts (
                            date_period       VARCHAR(80),
                            material          VARCHAR(80),
                            description       VARCHAR(1000),
+                           image_url         VARCHAR(500),
                            collection_id     BIGINT       NOT NULL,
                            location_id       BIGINT       NOT NULL,
                            status            VARCHAR(20)  NOT NULL DEFAULT 'STORED',
@@ -182,19 +183,10 @@ CREATE TABLE exhibition_artifacts (
 ) ENGINE = InnoDB;
 
 CREATE INDEX ix_exhibition_artifacts_artifact ON exhibition_artifacts (artifact_id);
--- ---------------------------------------------------------------------------
--- Performance indexes.
--- Foreign keys and UNIQUE constraints are indexed by InnoDB automatically, so
--- only non-key filter columns are listed here.
--- ---------------------------------------------------------------------------
-CREATE INDEX idx_artifacts_status           ON artifacts (status);
-CREATE INDEX idx_artifacts_collection_status ON artifacts (collection_id, status);
-CREATE INDEX idx_restoration_jobs_status    ON restoration_jobs (status);
-CREATE INDEX idx_exhibitions_date_range     ON exhibitions (start_date, end_date);
 
--- ---------------------------------------------------------------------------
--- Artifact imagery. Stores a URL rather than bytes: the museum's own assets
--- would live on a CDN in production, and for this build the seed data points
--- at the Met's Open Access collection.
--- ---------------------------------------------------------------------------
-ALTER TABLE artifacts ADD COLUMN image_url VARCHAR(500) NULL;
+-- ---------------------------------------------------------------------
+-- One composite index the single-column ones above do not cover: the
+-- catalogue is filtered by collection and status together more often than
+-- by either alone.
+-- ---------------------------------------------------------------------
+CREATE INDEX idx_artifacts_collection_status ON artifacts (collection_id, status);
