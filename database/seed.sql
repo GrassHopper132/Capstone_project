@@ -117,3 +117,8 @@ INSERT INTO exhibition_artifacts (exhibition_id, artifact_id, display_order) VAL
                                                                                  (3, 14, 4);
 -- Public visitors. Self-registration creates this role.
 INSERT IGNORE INTO roles (name) VALUES ('VISITOR');
+
+-- Status is derived, never hand-set: an artifact is ON_DISPLAY only while it sits on a show that is open today.
+SET SQL_SAFE_UPDATES = 0;
+UPDATE artifacts a SET a.status = CASE WHEN EXISTS (SELECT 1 FROM exhibition_artifacts ea JOIN exhibitions e ON e.id = ea.exhibition_id WHERE ea.artifact_id = a.id AND CURDATE() BETWEEN e.start_date AND e.end_date) THEN 'ON_DISPLAY' ELSE 'STORED' END WHERE a.status IN ('ON_DISPLAY','STORED');
+SET SQL_SAFE_UPDATES = 1;

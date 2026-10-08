@@ -6,6 +6,7 @@ export const getOpenExhibition = (id) => api.get(`/public/exhibitions/${id}`);
 
 /** Signed-in visitors only: the full programme, past and announced. */
 export const listArchive = () => api.get("/visitor/exhibitions");
+export const getArchiveExhibition = (id) => api.get(`/visitor/exhibitions/${id}`);
 
 /**
  * Where the museum is. Replace with the real address before any public use;
